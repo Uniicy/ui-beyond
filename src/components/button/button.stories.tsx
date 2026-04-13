@@ -7,7 +7,7 @@ const meta = {
   argTypes: {
     variant: {
       control: 'select',
-      options: ['solid', 'outline', 'ghost'],
+      options: ['primary', 'secondary', 'ghost', 'danger'],
     },
     size: {
       control: 'select',
@@ -17,23 +17,27 @@ const meta = {
     children: { control: 'text' },
   },
   args: {
-    children: 'Button',
+    children: 'Verify Identity',
   },
 } satisfies Meta<typeof Button>
 
 export default meta
 type Story = StoryObj<typeof meta>
 
-export const Solid: Story = {
-  args: { variant: 'solid' },
+export const Primary: Story = {
+  args: { variant: 'primary' },
 }
 
-export const Outline: Story = {
-  args: { variant: 'outline' },
+export const Secondary: Story = {
+  args: { variant: 'secondary', children: 'Review Document' },
 }
 
 export const Ghost: Story = {
-  args: { variant: 'ghost' },
+  args: { variant: 'ghost', children: 'Cancel' },
+}
+
+export const Danger: Story = {
+  args: { variant: 'danger', children: 'Reject Application' },
 }
 
 export const Small: Story = {

@@ -1,0 +1,38 @@
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--ub-space-2);
+  padding: var(--ub-space-1) var(--ub-space-3);
+  border-radius: var(--ub-radius-full);
+  background-color: var(--ub-color-tertiary-container);
+  font-family: var(--ub-font-body);
+  font-size: var(--ub-text-label-sm);
+  font-weight: 600;
+  letter-spacing: var(--ub-tracking-label);
+  text-transform: uppercase;
+  color: var(--ub-color-on-tertiary-container);
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: var(--ub-radius-full);
+  background-color: var(--ub-color-tertiary-fixed);
+  flex-shrink: 0;
+}
+
+.pulse .dot {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(0, 150, 104, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 0 4px rgba(0, 150, 104, 0);
+  }
+}

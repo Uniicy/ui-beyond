@@ -1,7 +1,7 @@
 import { type ButtonHTMLAttributes } from 'react'
 import styles from './button.module.css'
 
-type ButtonVariant = 'solid' | 'outline' | 'ghost'
+type ButtonVariant = 'primary' | 'secondary' | 'ghost' | 'danger'
 type ButtonSize = 'sm' | 'md' | 'lg'
 
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
@@ -10,7 +10,7 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 export function Button({
-  variant = 'solid',
+  variant = 'primary',
   size = 'md',
   className,
   ...props

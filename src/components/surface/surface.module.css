@@ -1,0 +1,49 @@
+/* Surface — tonal layering container (no borders) */
+
+.surface {
+  border-radius: var(--ub-radius-xl);
+  font-family: var(--ub-font-body);
+  color: var(--ub-color-on-surface);
+}
+
+/* ── Elevation levels (background shifts, not shadows) ── */
+
+.base {
+  background-color: var(--ub-color-surface);
+}
+
+.low {
+  background-color: var(--ub-color-surface-container-low);
+}
+
+.medium {
+  background-color: var(--ub-color-surface-container);
+}
+
+.high {
+  background-color: var(--ub-color-surface-container-high);
+}
+
+.highest {
+  background-color: var(--ub-color-surface-container-highest);
+}
+
+/* ── Glass variant (floating modals, nav rails) ── */
+
+.glass {
+  background: var(--ub-glass-bg);
+  backdrop-filter: blur(var(--ub-glass-blur));
+  -webkit-backdrop-filter: blur(var(--ub-glass-blur));
+}
+
+/* ── Floating variant (popovers — uses cloud shadow) ── */
+
+.floating {
+  box-shadow: var(--ub-shadow-ambient);
+}
+
+/* ── Nested roundness rhythm ── */
+
+.nested {
+  border-radius: var(--ub-radius-lg);
+}
