@@ -1,0 +1,260 @@
+/* ── Bar stack ── */
+
+.barStack {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.barStackSpaced {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* ── Status tag in header ── */
+
+.statusTag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--sdk-font);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  line-height: 1;
+}
+
+.statusTagWarning { color: var(--sdk-warning); }
+.statusTagDanger  { color: var(--sdk-danger); }
+
+.statusDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex: 0 0 auto;
+}
+
+.statusDotWarning { background: var(--sdk-warning); }
+.statusDotDanger  { background: var(--sdk-danger); }
+
+/* ── Near-limit callout ── */
+
+.callout {
+  margin-bottom: 16px;
+  padding: 12px 14px;
+  background: var(--sdk-warning-dim);
+  border: 0.5px solid var(--sdk-warning);
+  border-radius: var(--sdk-radius-md);
+}
+
+.calloutTitle {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--sdk-text);
+  margin-bottom: 2px;
+  line-height: 1.3;
+}
+
+.calloutCopy {
+  font-size: 12px;
+  color: var(--sdk-text-secondary);
+  line-height: 1.5;
+}
+
+/* ── At-limit hero ── */
+
+.atLimitTop {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 8px 0 0;
+}
+
+.blockedIcon {
+  color: var(--sdk-danger);
+  line-height: 0;
+}
+
+.atLimitHeading {
+  margin-top: 12px;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--sdk-text);
+}
+
+.atLimitCopy {
+  margin: 8px 0 0;
+  font-size: 12px;
+  color: var(--sdk-text-secondary);
+  line-height: 1.5;
+  max-width: 320px;
+}
+
+.atLimitCopySecondary {
+  margin: 6px 0 0;
+  font-size: 12px;
+  color: var(--sdk-text-secondary);
+  line-height: 1.5;
+  max-width: 320px;
+}
+
+/* ── Change form ── */
+
+.changeError {
+  font-size: 13px;
+  color: var(--sdk-text-secondary);
+  margin: 0;
+}
+
+.changeContext {
+  margin-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+.changeContextLabel {
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--sdk-text-tertiary);
+}
+
+.changeContextValue {
+  margin-top: 4px;
+  font-size: 13px;
+  color: var(--sdk-text);
+  font-family: var(--sdk-mono);
+}
+
+.changeContextUsage {
+  margin-top: 4px;
+  font-size: 12px;
+  color: var(--sdk-text-secondary);
+  font-family: var(--sdk-mono);
+}
+
+.changeFormGroup {
+  display: flex;
+  flex-direction: column;
+}
+
+.changeInputLabel {
+  font-size: 12px;
+  color: var(--sdk-text-secondary);
+  margin-bottom: 6px;
+}
+
+.changeInputWrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.changeInput,
+.changeInputWithPrefix {
+  width: 100%;
+  height: 40px;
+  padding: 0 12px;
+  border: 0.5px solid var(--sdk-border);
+  border-radius: var(--sdk-radius-md);
+  font-family: var(--sdk-mono);
+  font-size: 14px;
+  color: var(--sdk-text);
+  background: var(--sdk-bg);
+  box-sizing: border-box;
+  outline: none;
+  transition: border-color 120ms ease, box-shadow 120ms ease;
+}
+
+.changeInputWithPrefix {
+  padding-left: 40px;
+}
+
+.changeInput:focus,
+.changeInputWithPrefix:focus {
+  border-color: var(--sdk-primary);
+  box-shadow: 0 0 0 3px var(--sdk-primary-dim);
+}
+
+.changeInputPrefix {
+  position: absolute;
+  left: 12px;
+  font-size: 12px;
+  color: var(--sdk-text-tertiary);
+  font-family: var(--sdk-mono);
+  pointer-events: none;
+}
+
+.changeInputSuffix {
+  position: absolute;
+  right: 12px;
+  font-size: 12px;
+  color: var(--sdk-text-tertiary);
+  font-family: var(--sdk-mono);
+  pointer-events: none;
+}
+
+/* ── Cooling-off card ── */
+
+.coolingCard {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin-top: 12px;
+  padding: 10px 12px;
+  background: var(--sdk-primary-dim);
+  border: 0.5px solid var(--sdk-primary);
+  border-radius: var(--sdk-radius-md);
+}
+
+.coolingIcon {
+  color: var(--sdk-primary-text);
+  line-height: 0;
+  flex: 0 0 auto;
+  margin-top: 1px;
+}
+
+.coolingText {
+  font-size: 12px;
+  color: var(--sdk-primary-text);
+  line-height: 1.5;
+}
+
+/* ── Change form footer buttons ── */
+
+.changeFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.btnGhost {
+  background: transparent;
+  border: none;
+  padding: 8px 4px;
+  color: var(--sdk-text-secondary);
+  font-family: var(--sdk-font);
+  font-size: 13px;
+  cursor: pointer;
+}
+.btnGhost:hover { color: var(--sdk-text); }
+
+.btnPrimary {
+  background: var(--sdk-primary);
+  color: #ffffff;
+  border: none;
+  height: 36px;
+  padding: 0 16px;
+  border-radius: var(--sdk-radius-md);
+  font-family: var(--sdk-font);
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: opacity 120ms ease;
+}
+.btnPrimary:hover { opacity: 0.9; }

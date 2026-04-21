@@ -1,0 +1,220 @@
+.viewport {
+  position: relative;
+  background: #0F172A;
+  border-radius: var(--sdk-radius-lg);
+  overflow: hidden;
+  box-sizing: border-box;
+  font-family: var(--sdk-font);
+}
+
+/* ── corner guides ── */
+
+.corner {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border-color: rgba(255, 255, 255, 0.3);
+  border-style: solid;
+  border-width: 0;
+}
+
+.cornerTL { top: 12px; left: 12px; border-top-width: 2px; border-left-width: 2px; }
+.cornerTR { top: 12px; right: 12px; border-top-width: 2px; border-right-width: 2px; }
+.cornerBL { bottom: 12px; left: 12px; border-bottom-width: 2px; border-left-width: 2px; }
+.cornerBR { bottom: 12px; right: 12px; border-bottom-width: 2px; border-right-width: 2px; }
+
+/* ── face silhouette (storybook only) ── */
+
+.face {
+  position: absolute;
+  top: 48%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 84px;
+  height: 106px;
+  border-radius: 50% 50% 44% 44% / 55% 55% 45% 45%;
+  background: radial-gradient(ellipse at 50% 38%, #edd1b2 0%, #c79b73 72%, #9a7350 100%);
+  opacity: 0.9;
+  box-shadow: inset 0 -6px 12px rgba(0, 0, 0, 0.25);
+}
+
+/* ── oval guide ── */
+
+.oval {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90px;
+  height: 110px;
+  border-radius: 50% 50% 44% 44% / 55% 55% 45% 45%;
+  border: 2.5px solid transparent;
+  box-sizing: border-box;
+  pointer-events: none;
+}
+
+.ovalSearching {
+  border: 2.5px dashed rgba(255, 255, 255, 0.4);
+}
+
+.ovalDetected {
+  border-color: #10B981;
+  box-shadow: 0 0 24px rgba(16, 185, 129, 0.5);
+}
+
+.ovalChallenge {
+  border-color: #7F77DD;
+  box-shadow: 0 0 16px rgba(127, 119, 221, 0.4);
+  animation: cam-challenge-pulse 1s ease-in-out infinite;
+}
+
+@keyframes cam-challenge-pulse {
+  0%   { transform: translate(-50%, -50%) scale(1); }
+  50%  { transform: translate(-50%, -50%) scale(1.04); }
+  100% { transform: translate(-50%, -50%) scale(1); }
+}
+
+.ovalProcessing {
+  border-color: rgba(16, 185, 129, 0.4);
+}
+
+.ovalPassed {
+  border-color: #10B981;
+}
+
+.ovalFailed {
+  border-color: #EF4444;
+}
+
+/* ── scan-line during processing ── */
+
+.scanLine {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 160px;
+  height: 120%;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(16, 185, 129, 0) 42%,
+    rgba(16, 185, 129, 0.9) 50%,
+    rgba(16, 185, 129, 0) 58%,
+    transparent 100%
+  );
+  transform: translate(-50%, -60%);
+  animation: cam-scan 1.8s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes cam-scan {
+  0%   { transform: translate(-50%, -60%); }
+  100% { transform: translate(-50%, 60%); }
+}
+
+.processingOverlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.35);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: #fff;
+}
+
+.processingSpinner {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 3px solid rgba(255, 255, 255, 0.15);
+  border-top-color: #10B981;
+  animation: cam-spin 0.8s linear infinite;
+}
+
+@keyframes cam-spin {
+  to { transform: rotate(360deg); }
+}
+
+.processingText {
+  font-family: var(--sdk-font);
+  font-size: 12px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.9);
+  letter-spacing: 0.02em;
+}
+
+/* ── passed tick overlay ── */
+
+.passedOverlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+/* ── challenge arrow ── */
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  color: #7F77DD;
+  pointer-events: none;
+  line-height: 0;
+  animation: cam-arrow-pulse 1s ease-in-out infinite;
+  filter: drop-shadow(0 0 8px rgba(127, 119, 221, 0.6));
+}
+
+.arrowLeft  { transform: translate(calc(-50% - 90px), -50%); }
+.arrowRight { transform: translate(calc(-50% + 90px), -50%); }
+.arrowUp    { transform: translate(-50%, calc(-50% - 110px)); }
+
+@keyframes cam-arrow-pulse {
+  0%,100% { opacity: 0.55; }
+  50%     { opacity: 1; }
+}
+
+.arrowLeft  { animation: cam-arrow-left  1s ease-in-out infinite; }
+.arrowRight { animation: cam-arrow-right 1s ease-in-out infinite; }
+.arrowUp    { animation: cam-arrow-up    1s ease-in-out infinite; }
+
+@keyframes cam-arrow-left {
+  0%,100% { transform: translate(calc(-50% - 90px), -50%) scale(1);    opacity: 0.55; }
+  50%     { transform: translate(calc(-50% - 90px), -50%) scale(1.18); opacity: 1; }
+}
+@keyframes cam-arrow-right {
+  0%,100% { transform: translate(calc(-50% + 90px), -50%) scale(1);    opacity: 0.55; }
+  50%     { transform: translate(calc(-50% + 90px), -50%) scale(1.18); opacity: 1; }
+}
+@keyframes cam-arrow-up {
+  0%,100% { transform: translate(-50%, calc(-50% - 110px)) scale(1);    opacity: 0.55; }
+  50%     { transform: translate(-50%, calc(-50% - 110px)) scale(1.18); opacity: 1; }
+}
+
+/* ── instruction pill ── */
+
+.pill {
+  position: absolute;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 6px 14px;
+  border-radius: 9999px;
+  font-family: var(--sdk-font);
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+  color: #ffffff;
+  letter-spacing: 0.02em;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+.pillSearching  { background: rgba(100, 116, 139, 0.92); }
+.pillDetected   { background: rgba(16, 185, 129, 0.95); }
+.pillChallenge  { background: rgba(127, 119, 221, 0.95); }
+.pillProcessing { background: rgba(16, 185, 129, 0.92); }
+.pillPassed     { background: rgba(16, 185, 129, 0.95); }
+.pillFailed     { background: rgba(239, 68, 68, 0.95); }

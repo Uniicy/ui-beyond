@@ -1,0 +1,391 @@
+/* ── Buttons ── */
+
+.btnPrimary,
+.btnDanger {
+  width: 100%;
+  padding: 10px 14px;
+  border: none;
+  border-radius: var(--sdk-radius-md);
+  font-family: var(--sdk-font);
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  color: #ffffff;
+  transition: opacity 120ms ease;
+}
+.btnPrimary { background: var(--sdk-primary); }
+.btnDanger  { background: var(--sdk-danger); }
+.btnPrimary:hover, .btnDanger:hover { opacity: 0.9; }
+.btnPrimary:disabled { opacity: 0.4; cursor: not-allowed; }
+
+.btnGhost {
+  width: 100%;
+  padding: 10px 14px;
+  background: transparent;
+  color: var(--sdk-text);
+  border: 0.5px solid var(--sdk-border);
+  border-radius: var(--sdk-radius-md);
+  font-family: var(--sdk-font);
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 120ms ease;
+}
+.btnGhost:hover { background: var(--sdk-bg-secondary); }
+
+.footerStack {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* ── Accent bar at top of body ── */
+
+.accentBar {
+  height: 3px;
+  margin: -16px -16px 14px;
+}
+.accentSuccess { background: var(--sdk-success); }
+.accentWarning { background: var(--sdk-warning); }
+.accentDanger  { background: var(--sdk-danger); }
+
+/* ── Status row (dot + text) ── */
+
+.statusRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 14px;
+  justify-content: center;
+  font-size: 13px;
+  color: var(--sdk-text);
+}
+.statusText { font-family: var(--sdk-font); }
+
+.statusDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex: 0 0 auto;
+}
+.statusDotGrey   { background: var(--sdk-text-tertiary); }
+.statusDotGreen  { background: var(--sdk-success); box-shadow: 0 0 10px rgba(0, 150, 104, 0.4); }
+.statusDotPurple {
+  background: #7F77DD;
+  box-shadow: 0 0 10px rgba(127, 119, 221, 0.5);
+  animation: liv-pulse 1.2s ease-in-out infinite;
+}
+@keyframes liv-pulse {
+  0%,100% { opacity: 0.75; }
+  50%     { opacity: 1; }
+}
+
+/* ── Common camera body ── */
+
+.cameraBody {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ── Instructions state ── */
+
+.instructionsBody {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.introCopy {
+  margin: 0;
+  font-size: 13px;
+  color: var(--sdk-text-tertiary);
+  line-height: 1.5;
+}
+
+.prepList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.prepItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 13px;
+  color: var(--sdk-text);
+  line-height: 1.4;
+}
+
+.prepIcon {
+  flex: 0 0 auto;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: var(--sdk-primary-dim);
+  color: var(--sdk-primary);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ── Challenge footer ── */
+
+.challengeFoot {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  margin-top: 14px;
+}
+
+.challengeDots {
+  display: flex;
+  gap: 6px;
+}
+
+.challengeDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--sdk-bg-tertiary);
+  border: 1px solid var(--sdk-border-strong);
+  box-sizing: border-box;
+}
+
+.challengeDotActive {
+  background: #7F77DD;
+  border-color: #7F77DD;
+  box-shadow: 0 0 8px rgba(127, 119, 221, 0.5);
+}
+
+.challengeLabel {
+  font-size: 11px;
+  color: var(--sdk-text-tertiary);
+  letter-spacing: 0.03em;
+}
+
+/* ── Confidence bars ── */
+
+.confidenceStack {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.confRow {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.confHead {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.confLabel {
+  font-size: 12px;
+  color: var(--sdk-text);
+  font-weight: 500;
+}
+
+.confValue {
+  font-family: var(--sdk-mono);
+  font-size: 12px;
+  color: var(--sdk-success);
+  font-variant-numeric: tabular-nums;
+}
+
+.confTrack {
+  height: 4px;
+  background: var(--sdk-bg-tertiary);
+  border-radius: 9999px;
+  overflow: hidden;
+}
+
+.confFill {
+  height: 100%;
+  background: var(--sdk-success);
+  transition: width 300ms ease;
+}
+
+/* ── Warning / danger cards ── */
+
+.warningCard,
+.dangerCard {
+  margin-top: 14px;
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: var(--sdk-radius-md);
+  box-sizing: border-box;
+}
+
+.warningCard {
+  background: var(--sdk-warning-dim);
+  border: 1px solid color-mix(in srgb, var(--sdk-warning) 30%, transparent);
+}
+.warningTitle {
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--sdk-warning);
+  margin-bottom: 4px;
+}
+.warningCopy {
+  margin: 0;
+  font-size: 12px;
+  color: var(--sdk-text);
+  line-height: 1.5;
+}
+
+.dangerCard {
+  background: var(--sdk-danger-dim);
+  border: 1px solid color-mix(in srgb, var(--sdk-danger) 30%, transparent);
+}
+.dangerTitle {
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--sdk-danger);
+  margin-bottom: 4px;
+}
+.dangerCopy {
+  margin: 0;
+  font-size: 12px;
+  color: var(--sdk-text);
+  line-height: 1.5;
+}
+
+/* ── Max retries state ── */
+
+.manualBody {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.iconCircleDanger {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--sdk-danger);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.manualTitle {
+  margin-top: 14px;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--sdk-text);
+}
+
+.manualCopy {
+  margin: 6px 0 14px;
+  font-size: 12px;
+  color: var(--sdk-text-tertiary);
+  line-height: 1.5;
+  max-width: 320px;
+}
+
+.attemptsTable {
+  width: 100%;
+  background: var(--sdk-bg-secondary);
+  border-radius: var(--sdk-radius-md);
+  padding: 10px 12px;
+  text-align: left;
+  box-sizing: border-box;
+}
+
+.attemptsHead {
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--sdk-text-tertiary);
+  margin-bottom: 6px;
+}
+
+.attemptsList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.attemptsRow {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 12px;
+  color: var(--sdk-text);
+  line-height: 1.4;
+}
+
+.attemptStep {
+  flex: 0 0 auto;
+  width: 72px;
+  font-weight: 500;
+  color: var(--sdk-text-tertiary);
+  font-family: var(--sdk-mono);
+  font-size: 11px;
+}
+
+.attemptReason {
+  flex: 1 1 auto;
+  color: var(--sdk-text);
+}
+
+.emailNotice {
+  margin: 14px 0 0;
+  font-size: 12px;
+  color: var(--sdk-text-tertiary);
+  text-align: center;
+  line-height: 1.5;
+}
+
+.emailValue {
+  color: var(--sdk-text);
+  font-family: var(--sdk-mono);
+  font-size: 11px;
+}
+
+/* ── Timeout state ── */
+
+.clockWrap {
+  position: relative;
+  display: inline-block;
+}
+
+.clockOverlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.35));
+}
+
+.timeoutCopy {
+  margin: 16px 0 0;
+  text-align: center;
+  font-size: 13px;
+  color: var(--sdk-text-tertiary);
+  line-height: 1.5;
+}

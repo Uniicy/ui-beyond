@@ -1,0 +1,81 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  font-family: var(--sdk-font);
+}
+
+.headRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 6px;
+}
+
+.label {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--sdk-text);
+  line-height: 1.2;
+}
+
+.source {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+  color: var(--sdk-text-tertiary);
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.lock {
+  display: inline-flex;
+  align-items: center;
+  color: var(--sdk-text-tertiary);
+  line-height: 0;
+}
+
+.footRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 6px;
+}
+
+.usage {
+  font-family: var(--sdk-mono);
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+  line-height: 1.2;
+}
+
+.usageSuccess { color: var(--sdk-success); }
+.usageWarning { color: var(--sdk-warning); }
+.usageDanger { color: var(--sdk-danger); }
+
+.reset {
+  font-size: 11px;
+  color: var(--sdk-text-tertiary);
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.changeLink {
+  margin-top: 8px;
+  align-self: flex-start;
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  font-family: var(--sdk-font);
+  font-size: 12px;
+  color: var(--sdk-primary-text);
+  text-decoration: none;
+}
+
+.changeLink:hover {
+  text-decoration: underline;
+}

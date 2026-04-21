@@ -1,0 +1,80 @@
+/* ──────────────────────────────────────────────────────────
+   SDK-JS — Embeddable Widget Tokens
+   Isolated namespace (--sdk-*) for SDK widgets embedded in
+   third-party operator sites. Loaded alongside the admin
+   theme tokens but scoped to widget surfaces only.
+   ────────────────────────────────────────────────────────── */
+
+:root,
+[data-theme='light'] {
+  /* ── Dimensions ── */
+  --sdk-widget-width: 400px;
+  --sdk-radius-md: 8px;
+  --sdk-radius-lg: 14px;
+  --sdk-radius-pill: 9999px;
+
+  /* ── Typography ── */
+  --sdk-font: 'Inter', system-ui, -apple-system, sans-serif;
+  --sdk-mono: ui-monospace, 'Cascadia Code', 'Fira Code', monospace;
+  --sdk-text-base: 13px;
+
+  /* ── Surfaces ── */
+  --sdk-bg: #ffffff;
+  --sdk-bg-secondary: #f6f7fb;
+  --sdk-bg-tertiary: #edeef4;
+
+  /* ── Text ── */
+  --sdk-text: #131b2e;
+  --sdk-text-secondary: #4b5563;
+  --sdk-text-tertiary: #6b7080;
+
+  /* ── Borders ── */
+  --sdk-border: #e5e7ee;
+  --sdk-border-strong: #c6c6cd;
+
+  /* ── Primary (widget CTA / accent) ── */
+  --sdk-primary: #131b2e;
+  --sdk-primary-text: #131b2e;
+  --sdk-primary-dim: rgba(19, 27, 46, 0.06);
+
+  /* ── Semantic ── */
+  --sdk-success: #009668;
+  --sdk-success-dim: rgba(0, 150, 104, 0.1);
+  --sdk-danger: #ba1a1a;
+  --sdk-danger-dim: rgba(186, 26, 26, 0.08);
+  --sdk-warning: #7c5800;
+  --sdk-warning-dim: rgba(124, 88, 0, 0.1);
+
+  /* ── Shadow ── */
+  --sdk-shadow:
+    0 4px 24px rgba(19, 27, 46, 0.08),
+    0 1px 2px rgba(19, 27, 46, 0.04);
+}
+
+[data-theme='dark'] {
+  --sdk-bg: #1a1b21;
+  --sdk-bg-secondary: #22232a;
+  --sdk-bg-tertiary: #2a2b32;
+
+  --sdk-text: #e3e1e9;
+  --sdk-text-secondary: #b5bac4;
+  --sdk-text-tertiary: #909097;
+
+  --sdk-border: #2e2f36;
+  --sdk-border-strong: #45464f;
+
+  --sdk-primary: #b8c5f0;
+  --sdk-primary-text: #dae2fd;
+  --sdk-primary-dim: rgba(184, 197, 240, 0.1);
+
+  --sdk-success: #3dd69c;
+  --sdk-success-dim: rgba(61, 214, 156, 0.12);
+  --sdk-danger: #ffb4ab;
+  --sdk-danger-dim: rgba(255, 180, 171, 0.1);
+  --sdk-warning: #fabd00;
+  --sdk-warning-dim: rgba(250, 189, 0, 0.14);
+
+  --sdk-shadow:
+    0 4px 24px rgba(0, 0, 0, 0.4),
+    0 1px 2px rgba(0, 0, 0, 0.2);
+}

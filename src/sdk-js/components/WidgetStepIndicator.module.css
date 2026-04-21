@@ -1,0 +1,84 @@
+.row {
+  display: flex;
+  align-items: flex-start;
+  font-family: var(--sdk-font);
+}
+
+.stepCell {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 0 0 auto;
+  min-width: 44px;
+}
+
+.circle {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  flex: 0 0 auto;
+  transition: background 120ms ease, border-color 120ms ease, color 120ms ease;
+}
+
+.circlePast {
+  background: var(--sdk-success);
+  color: #ffffff;
+  border: 1px solid var(--sdk-success);
+}
+
+.circleActive {
+  background: var(--sdk-primary);
+  color: #ffffff;
+  border: 1px solid var(--sdk-primary);
+}
+
+.circleFuture {
+  background: transparent;
+  border: 1px solid var(--sdk-border-strong);
+  color: var(--sdk-text-tertiary);
+}
+
+.num {
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 1;
+}
+
+.label {
+  margin-top: 4px;
+  font-size: 11px;
+  line-height: 1.1;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.labelPast {
+  color: var(--sdk-text-tertiary);
+  font-weight: 400;
+}
+
+.labelActive {
+  color: var(--sdk-text);
+  font-weight: 500;
+}
+
+.labelFuture {
+  color: var(--sdk-text-tertiary);
+  font-weight: 400;
+}
+
+.connector {
+  flex: 1 1 auto;
+  min-width: 16px;
+  height: 1px;
+  background: var(--sdk-border);
+  margin: 10.5px 6px 0;
+}
+
+.connectorComplete {
+  background: var(--sdk-success);
+}

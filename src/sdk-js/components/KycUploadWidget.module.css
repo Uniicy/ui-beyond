@@ -1,0 +1,491 @@
+/* ── Buttons (shared across states) ── */
+
+.btnPrimary {
+  width: 100%;
+  padding: 10px 14px;
+  background: var(--sdk-primary);
+  color: #ffffff;
+  border: none;
+  border-radius: var(--sdk-radius-md);
+  font-family: var(--sdk-font);
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: opacity 120ms ease, background 120ms ease;
+}
+.btnPrimary:hover:not(:disabled) {
+  opacity: 0.9;
+}
+.btnPrimary:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.btnSuccess {
+  width: 100%;
+  padding: 10px 14px;
+  background: var(--sdk-success);
+  color: #ffffff;
+  border: none;
+  border-radius: var(--sdk-radius-md);
+  font-family: var(--sdk-font);
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: opacity 120ms ease;
+}
+.btnSuccess:hover {
+  opacity: 0.9;
+}
+
+.btnGhost {
+  padding: 10px 14px;
+  background: transparent;
+  color: var(--sdk-text);
+  border: 0.5px solid var(--sdk-border);
+  border-radius: var(--sdk-radius-md);
+  font-family: var(--sdk-font);
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 120ms ease;
+}
+.btnGhost:hover {
+  background: var(--sdk-bg-secondary);
+}
+
+.btnLink {
+  background: transparent;
+  border: none;
+  padding: 4px;
+  color: var(--sdk-text-tertiary);
+  font-family: var(--sdk-font);
+  font-size: 12px;
+  cursor: pointer;
+  align-self: center;
+}
+.btnLink:hover {
+  color: var(--sdk-text);
+  text-decoration: underline;
+}
+
+.footerRow {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+.footerRow .btnGhost {
+  flex: 0 0 auto;
+  width: auto;
+}
+.footerRow .btnPrimary {
+  flex: 1 1 auto;
+}
+
+.footerStack {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* ── Icon containers ── */
+
+.iconSquare {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.iconSquarePrimary {
+  background: var(--sdk-primary-dim);
+  color: var(--sdk-primary);
+}
+
+.iconCircle {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.iconCircleSuccess {
+  background: var(--sdk-success);
+  color: #ffffff;
+}
+
+.iconCircleDanger {
+  background: var(--sdk-danger);
+  color: #ffffff;
+}
+
+.iconCircleWarning {
+  background: var(--sdk-warning);
+  color: #ffffff;
+}
+
+/* ── PROMPT state ── */
+
+.promptBody {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 8px 4px 0;
+}
+
+.promptTitle {
+  margin-top: 16px;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--sdk-text);
+  line-height: 1.3;
+}
+
+.promptDesc {
+  margin: 6px 0 16px;
+  font-size: 13px;
+  color: var(--sdk-text-tertiary);
+  line-height: 1.5;
+}
+
+.checklist {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  text-align: left;
+}
+
+.checklistItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 13px;
+  color: var(--sdk-text);
+  line-height: 1.4;
+}
+
+.checklistCheck {
+  flex: 0 0 auto;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--sdk-success-dim);
+  color: var(--sdk-success);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1px;
+}
+
+/* ── UPLOAD state ── */
+
+.uploadBody {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.docTypeLabel {
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--sdk-text-tertiary);
+}
+
+.pillRow {
+  display: flex;
+  gap: 6px;
+}
+
+.docPill {
+  flex: 1 1 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 8px 8px;
+  border: 1px solid var(--sdk-border);
+  border-radius: var(--sdk-radius-md);
+  background: transparent;
+  color: var(--sdk-text);
+  font-family: var(--sdk-font);
+  font-size: 12px;
+  cursor: pointer;
+  transition: border-color 120ms ease, background 120ms ease, color 120ms ease;
+  min-width: 0;
+}
+
+.docPill:hover {
+  background: var(--sdk-bg-secondary);
+}
+
+.docPillSelected {
+  border-color: var(--sdk-primary);
+  background: var(--sdk-primary-dim);
+  color: var(--sdk-primary-text);
+  font-weight: 500;
+}
+
+.docPillIcon {
+  display: inline-flex;
+  line-height: 0;
+  color: inherit;
+  flex: 0 0 auto;
+}
+
+/* ── PROCESSING state ── */
+
+.processingBody {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.spinnerLarge {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 3px solid var(--sdk-bg-tertiary);
+  border-top-color: var(--sdk-primary);
+  animation: kyc-spin 0.9s linear infinite;
+}
+
+@keyframes kyc-spin {
+  to { transform: rotate(360deg); }
+}
+
+.processingTitle {
+  margin-top: 14px;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--sdk-text);
+}
+
+.processingCopy {
+  margin: 6px 0 16px;
+  font-size: 12px;
+  color: var(--sdk-text-tertiary);
+  line-height: 1.5;
+  max-width: 300px;
+}
+
+.progressList {
+  list-style: none;
+  padding: 12px;
+  margin: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  text-align: left;
+  background: var(--sdk-bg-secondary);
+  border-radius: var(--sdk-radius-md);
+}
+
+.progressItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.progressIndicator {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  box-sizing: border-box;
+}
+
+.progressComplete {
+  background: var(--sdk-success);
+  color: #ffffff;
+}
+
+.progressActive {
+  background: var(--sdk-primary);
+  box-shadow: 0 0 0 0 var(--sdk-primary-dim);
+  animation: kyc-pulse 1.2s ease-out infinite;
+}
+
+.progressPending {
+  background: transparent;
+  border: 1px solid var(--sdk-border-strong);
+}
+
+@keyframes kyc-pulse {
+  0% { box-shadow: 0 0 0 0 var(--sdk-primary-dim); }
+  70% { box-shadow: 0 0 0 6px rgba(19, 27, 46, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(19, 27, 46, 0); }
+}
+
+.progressText {
+  font-size: 12px;
+  color: var(--sdk-text);
+}
+
+.progressTextPending {
+  color: var(--sdk-text-tertiary);
+}
+
+/* ── APPROVED state ── */
+
+.approvedBody {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.approvedTitle {
+  margin-top: 14px;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--sdk-text);
+}
+
+.detailGrid {
+  margin: 16px 0 0;
+  padding: 12px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  row-gap: 10px;
+  column-gap: 12px;
+  background: var(--sdk-bg-secondary);
+  border-radius: var(--sdk-radius-md);
+  text-align: left;
+}
+
+.detailPair {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin: 0;
+}
+
+.detailLabel {
+  font-size: 10px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--sdk-text-tertiary);
+  margin: 0;
+}
+
+.detailValue {
+  font-size: 13px;
+  color: var(--sdk-text);
+  margin: 0;
+}
+
+.detailValueAccent {
+  color: var(--sdk-success);
+  font-weight: 500;
+}
+
+/* ── REJECTED state ── */
+
+.rejectedBody {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.rejectedTitle {
+  margin-top: 14px;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--sdk-text);
+  line-height: 1.3;
+}
+
+.reasonBlock {
+  margin-top: 14px;
+  padding: 12px 14px;
+  width: 100%;
+  background: var(--sdk-warning-dim);
+  border-radius: var(--sdk-radius-md);
+  font-size: 12px;
+  color: var(--sdk-text);
+  line-height: 1.5;
+  text-align: left;
+  box-sizing: border-box;
+}
+
+/* ── MANUAL REVIEW state ── */
+
+.manualBody {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.manualTitle {
+  margin-top: 14px;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--sdk-text);
+}
+
+.manualCopy {
+  margin: 6px 0 14px;
+  font-size: 12px;
+  color: var(--sdk-text-tertiary);
+}
+
+.amberCard {
+  padding: 12px 14px;
+  width: 100%;
+  background: var(--sdk-warning-dim);
+  border-radius: var(--sdk-radius-md);
+  text-align: left;
+  box-sizing: border-box;
+}
+
+.amberTitle {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--sdk-warning);
+  margin-bottom: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.amberCopy {
+  margin: 0;
+  font-size: 12px;
+  color: var(--sdk-text);
+  line-height: 1.5;
+}
+
+.emailNotice {
+  margin: 14px 0 0;
+  font-size: 12px;
+  color: var(--sdk-text-tertiary);
+  text-align: center;
+  line-height: 1.5;
+}
+
+.emailValue {
+  color: var(--sdk-text);
+  font-family: var(--sdk-mono);
+  font-size: 11px;
+}
