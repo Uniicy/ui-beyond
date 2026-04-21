@@ -1,0 +1,60 @@
+import { Meta } from '@storybook/addon-docs/blocks'
+
+<Meta title="Introduction" />
+
+# @uniicy/ui-beyond
+
+Compliance-as-Code design system for Uniicy iGaming platforms. Pre-built React components covering KYC, AML, risk, transactions, alerts, admin UIs.
+
+## Install
+
+Scoped to GitHub Packages. Configure `.npmrc` in your project:
+
+```ini
+@uniicy:registry=https://npm.pkg.github.com
+//npm.pkg.github.com/:_authToken=${GITHUB_TOKEN}
+```
+
+Then install:
+
+```sh
+bun add @uniicy/ui-beyond
+# or
+pnpm add @uniicy/ui-beyond
+# or
+npm install @uniicy/ui-beyond
+```
+
+`GITHUB_TOKEN` must be a Personal Access Token with `read:packages` scope.
+
+## Use
+
+```tsx
+import '@uniicy/ui-beyond/styles'
+import { Button, Badge, ThemeProvider } from '@uniicy/ui-beyond'
+
+export function App() {
+  return (
+    <ThemeProvider>
+      <Button variant="primary">Verify Identity</Button>
+      <Badge variant="approved" dot />
+    </ThemeProvider>
+  )
+}
+```
+
+## Peer deps
+
+- `react >= 18`
+- `react-dom >= 18`
+
+## Tree layout
+
+- `Components/*` — all production components (94+)
+- `Foundations/*` — design tokens, colors, typography
+
+Each component page includes a **Docs** tab (auto-generated from TypeScript types) and a set of **Story** examples covering variants and edge cases.
+
+## Source
+
+Repository: [github.com/uniicy/ui-beyond](https://github.com/uniicy/ui-beyond)

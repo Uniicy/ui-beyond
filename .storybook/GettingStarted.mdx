@@ -1,0 +1,79 @@
+import { Meta } from '@storybook/addon-docs/blocks'
+
+<Meta title="Getting Started" />
+
+# Getting Started
+
+## 1. Authenticate to GitHub Packages
+
+Create a classic PAT with `read:packages` scope at https://github.com/settings/tokens.
+
+Export it:
+
+```sh
+export GITHUB_TOKEN=ghp_xxx
+```
+
+## 2. Add `.npmrc`
+
+At your project root:
+
+```ini
+@uniicy:registry=https://npm.pkg.github.com
+//npm.pkg.github.com/:_authToken=${GITHUB_TOKEN}
+always-auth=true
+```
+
+Commit `.npmrc` without the token. Token lives in env only.
+
+## 3. Install
+
+```sh
+bun add @uniicy/ui-beyond
+```
+
+## 4. Import styles once
+
+At app root (e.g. `main.tsx` or `_app.tsx`):
+
+```ts
+import '@uniicy/ui-beyond/styles'
+```
+
+Ships design tokens (`--ub-*` CSS variables) + component CSS.
+
+## 5. Wrap app in `ThemeProvider`
+
+```tsx
+import { ThemeProvider } from '@uniicy/ui-beyond'
+
+export function App({ children }) {
+  return <ThemeProvider>{children}</ThemeProvider>
+}
+```
+
+## 6. Use components
+
+```tsx
+import { Button, KpiCard, DataTable } from '@uniicy/ui-beyond'
+```
+
+All components tree-shake. Import only what you use.
+
+## CI auth
+
+In GitHub Actions, use `secrets.GITHUB_TOKEN` (auto-provided) — has `read:packages` by default on same-org repos:
+
+```yaml
+- uses: actions/setup-node@v4
+  with:
+    registry-url: https://npm.pkg.github.com
+    scope: '@uniicy'
+- run: npm ci
+  env:
+    NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+```
+
+## Upgrading
+
+Check [CHANGELOG](https://github.com/uniicy/ui-beyond/blob/main/CHANGELOG.md) before bumping. Breaking changes land on major versions only.
