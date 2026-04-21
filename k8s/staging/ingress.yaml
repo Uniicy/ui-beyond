@@ -1,0 +1,31 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ui-beyond-storybook
+  namespace: ui-beyond
+  labels:
+    app.kubernetes.io/name: ui-beyond-storybook
+    app.kubernetes.io/part-of: ui-beyond
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-prod
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"
+    nginx.ingress.kubernetes.io/auth-type: basic
+    nginx.ingress.kubernetes.io/auth-secret: basic-auth
+    nginx.ingress.kubernetes.io/auth-realm: "Uniicy UI Beyond - Staging"
+spec:
+  ingressClassName: nginx
+  tls:
+    - hosts:
+        - storybook.staging.uniicy.com
+      secretName: ui-beyond-storybook-tls
+  rules:
+    - host: storybook.staging.uniicy.com
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: ui-beyond-storybook
+                port:
+                  number: 3000

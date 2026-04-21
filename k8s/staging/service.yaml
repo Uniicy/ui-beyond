@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: ui-beyond-storybook
+  namespace: ui-beyond
+  labels:
+    app.kubernetes.io/name: ui-beyond-storybook
+    app.kubernetes.io/part-of: ui-beyond
+spec:
+  type: ClusterIP
+  selector:
+    app.kubernetes.io/name: ui-beyond-storybook
+  ports:
+    - name: http
+      port: 3000
+      targetPort: 3000
+      protocol: TCP
