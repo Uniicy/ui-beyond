@@ -35,3 +35,18 @@ storybook-static
 
 # Finder (MacOS) folder config
 .DS_Store
+
+# Claude Code / agent artifacts
+.claude/
+CLAUDE.original.md
+
+# Local npm auth (never commit token)
+.npmrc
+!.npmrc.example
+
+# VSCode
+.vscode
+
+# Kubeconfig copies (should never land in repo)
+kubeconfig
+*.kubeconfig

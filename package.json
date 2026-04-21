@@ -1,14 +1,31 @@
 {
   "name": "@uniicy/ui-beyond",
   "version": "0.1.0",
-  "type": "module",
-  "private": true,
-  "sideEffects": [
-    "**/*.css"
+  "description": "Compliance-as-Code design system and React component library for Uniicy iGaming platforms.",
+  "keywords": [
+    "uniicy",
+    "design-system",
+    "react",
+    "components",
+    "compliance",
+    "kyc",
+    "aml",
+    "igaming"
   ],
+  "license": "UNLICENSED",
+  "author": "Uniicy",
+  "homepage": "https://github.com/Uniicy/ui-beyond#readme",
+  "bugs": {
+    "url": "https://github.com/Uniicy/ui-beyond/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Uniicy/ui-beyond.git"
+  },
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
+  "type": "module",
   "exports": {
     ".": {
       "import": {
@@ -23,8 +40,17 @@
     "./styles": "./dist/index.css"
   },
   "files": [
-    "dist"
+    "dist",
+    "README.md",
+    "CHANGELOG.md"
   ],
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "publishConfig": {
+    "access": "restricted",
+    "registry": "https://npm.pkg.github.com"
+  },
   "scripts": {
     "build": "tsup",
     "build:watch": "tsup --watch",
@@ -37,9 +63,18 @@
     "react": ">=18",
     "react-dom": ">=18"
   },
+  "dependencies": {
+    "@dnd-kit/core": "^6.3.1",
+    "@dnd-kit/sortable": "^10.0.0",
+    "@dnd-kit/utilities": "^3.2.2",
+    "flag-icons": "^7.5.0",
+    "lucide-react": "^1.8.0"
+  },
   "devDependencies": {
+    "@storybook/addon-docs": "^10.3.5",
     "@storybook/react": "^10.3.5",
     "@storybook/react-vite": "^10.3.5",
+    "@storybook/test": "^8.6.15",
     "@types/bun": "latest",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
@@ -49,5 +84,6 @@
     "tsup": "^8.5.1",
     "typescript": "^5.9.3",
     "typescript-plugin-css-modules": "^5.2.0"
-  }
+  },
+  "packageManager": "pnpm@10.18.2+sha512.9fb969fa749b3ade6035e0f109f0b8a60b5d08a1a87fdf72e337da90dcc93336e2280ca4e44f2358a649b83c17959e9993e777c2080879f3801e6f0d999ad3dd"
 }
