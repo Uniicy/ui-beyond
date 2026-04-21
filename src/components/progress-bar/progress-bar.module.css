@@ -1,0 +1,107 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 100%;
+}
+
+.header {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.label {
+  font-family: var(--ub-font-body);
+  font-size: 10px;
+  font-weight: 500;
+  color: var(--ub-color-on-surface-variant);
+  line-height: 1;
+}
+
+/* ── Track ── */
+
+.track {
+  width: 100%;
+  background-color: var(--ub-color-surface-container-high);
+  overflow: hidden;
+}
+
+.rounded {
+  border-radius: var(--ub-radius-full);
+}
+
+/* ── Heights ── */
+
+.xs { height: 2px; }
+.sm { height: 4px; }
+.md { height: 6px; }
+.lg { height: 8px; }
+
+/* ── Fill ── */
+
+.fill {
+  height: 100%;
+  transition: width 0.3s ease;
+}
+
+.rounded .fill {
+  border-radius: var(--ub-radius-full);
+}
+
+/* ── Intent colours ── */
+
+.success .fill { background-color: var(--ub-color-tertiary-fixed); }
+.warning .fill { background-color: var(--ub-color-warning); }
+.danger .fill  { background-color: var(--ub-color-error); }
+.primary .fill { background-color: var(--ub-color-primary); }
+.neutral .fill { background-color: var(--ub-color-on-surface-variant); }
+
+/* ── Striped ── */
+
+.striped .fill {
+  background-image: repeating-linear-gradient(
+    -45deg,
+    transparent,
+    transparent 4px,
+    rgba(255, 255, 255, 0.2) 4px,
+    rgba(255, 255, 255, 0.2) 8px
+  );
+  background-size: 16px 16px;
+}
+
+/* ── Animated shimmer ── */
+
+.animated .fill {
+  background-image: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.3) 50%,
+    transparent 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* ── Striped + animated: keep stripes, add subtle pulse instead ── */
+
+.striped.animated .fill {
+  background-image: repeating-linear-gradient(
+    -45deg,
+    transparent,
+    transparent 4px,
+    rgba(255, 255, 255, 0.2) 4px,
+    rgba(255, 255, 255, 0.2) 8px
+  );
+  background-size: 16px 16px;
+  animation: stripeMove 0.8s linear infinite;
+}
+
+@keyframes stripeMove {
+  0% { background-position: 0 0; }
+  100% { background-position: 16px 0; }
+}

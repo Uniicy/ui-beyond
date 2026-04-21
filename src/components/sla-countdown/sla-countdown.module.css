@@ -1,0 +1,65 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  font-family: var(--ub-font-body);
+}
+
+/* ── Inline mode ── */
+
+.inline {
+  max-width: 120px;
+  gap: 3px;
+}
+
+.inline .time {
+  font-size: 10px;
+}
+
+.inline .deadline {
+  display: none;
+}
+
+/* ── Full mode ── */
+
+.full {
+  gap: 6px;
+}
+
+.full .time {
+  font-size: 13px;
+  font-weight: 500;
+}
+
+/* ── Status row ── */
+
+.statusRow {
+  display: flex;
+  align-items: center;
+  gap: var(--ub-space-1);
+}
+
+.time {
+  color: var(--ub-color-on-surface);
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+
+.timeWarning {
+  color: var(--ub-color-warning);
+}
+
+.timeDanger {
+  color: var(--ub-color-error);
+}
+
+.timePaused {
+  color: var(--ub-color-on-surface-variant);
+}
+
+/* ── Deadline label ── */
+
+.deadline {
+  font-size: 10px;
+  color: var(--ub-color-on-surface-variant);
+  line-height: 1;
+}

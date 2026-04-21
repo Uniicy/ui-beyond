@@ -1,0 +1,62 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  font-family: var(--ub-font-body);
+}
+
+/* ── Inline mode ── */
+
+.inline {
+  gap: 3px;
+  width: 48px;
+}
+
+.inline .score {
+  font-size: 13px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+}
+
+/* ── Full mode ── */
+
+.full {
+  gap: 8px;
+}
+
+.full .score {
+  font-size: 32px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+}
+
+.bandLabel {
+  font-size: 12px;
+  color: var(--ub-color-on-surface-variant);
+  line-height: 1;
+  margin-top: -4px;
+}
+
+.context {
+  font-size: 11px;
+  color: var(--ub-color-on-surface-variant);
+  line-height: 1;
+}
+
+/* ── Colour classes ── */
+
+.colorSuccess { color: var(--ub-color-tertiary-fixed); }
+.colorWarning { color: var(--ub-color-warning); }
+.colorDanger  { color: var(--ub-color-error); }
+
+/* ── Pulse for critical ── */
+
+.pulse {
+  animation: scorePulse 2s ease-in-out infinite;
+}
+
+@keyframes scorePulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}

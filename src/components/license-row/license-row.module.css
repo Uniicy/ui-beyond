@@ -1,0 +1,22 @@
+.row { display: grid; grid-template-columns: var(--ub-row-grid-template, 90px 180px 90px 200px 110px 70px); align-items: center; min-height: 52px; padding: 6px 0; border-bottom: 0.5px solid var(--ub-ghost-border); font-family: var(--ub-font-body); }
+.row:last-child { border-bottom: none; }
+.borderWarning { border-left: 2px solid var(--ub-color-warning); }
+.borderDanger { border-left: 2px solid var(--ub-color-error); }
+.cell { padding: 0 6px; display: flex; align-items: center; min-width: 0; }
+
+.licenseCell { display: flex; align-items: center; gap: 4px; padding: 0 6px; }
+.licenseNum { font-family: var(--ub-font-mono); font-size: 12px; color: var(--ub-color-on-surface); }
+.authority { font-family: var(--ub-font-mono); font-size: 12px; color: var(--ub-color-on-surface-variant); padding: 0 6px; }
+
+.validityCell { display: flex; flex-direction: column; gap: 3px; padding: 0 6px; }
+.dateRange { font-size: 12px; color: var(--ub-color-on-surface-variant); }
+.dateWarning { color: var(--ub-color-warning); }
+.progressWrap { width: 100px; }
+
+.actionCell { padding: 0 6px; }
+.deactBtn { font-family: var(--ub-font-body); font-size: 11px; font-weight: 500; color: var(--ub-color-error); background: none; border: none; padding: 0; cursor: pointer; }
+.deactBtn:hover { opacity: 0.75; }
+.confirmRow { display: flex; align-items: center; gap: 6px; font-size: 11px; color: var(--ub-color-on-surface-variant); }
+.confirmBtn { font-family: var(--ub-font-body); font-size: 11px; font-weight: 600; border: none; border-radius: var(--ub-radius-sm); padding: 2px 8px; cursor: pointer; }
+.confirmDanger { background-color: var(--ub-color-error); color: var(--ub-color-on-error); }
+.confirmCancel { background: none; color: var(--ub-color-on-surface-variant); }

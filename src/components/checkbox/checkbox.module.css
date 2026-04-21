@@ -1,0 +1,97 @@
+.wrapper {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--ub-space-2);
+  position: relative;
+  cursor: pointer;
+}
+
+.disabled {
+  opacity: 0.4;
+  pointer-events: none;
+  cursor: not-allowed;
+}
+
+/* ── Hidden native input ── */
+
+.input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+}
+
+/* ── Custom box ── */
+
+.box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1.5px solid var(--ub-color-secondary-container);
+  border-radius: 4px;
+  background-color: transparent;
+  flex-shrink: 0;
+  transition:
+    background-color var(--ub-transition-fast),
+    border-color var(--ub-transition-fast);
+}
+
+.sm .box {
+  width: 14px;
+  height: 14px;
+}
+
+.md .box {
+  width: 16px;
+  height: 16px;
+}
+
+/* ── States ── */
+
+.wrapper:not(.disabled):hover .box {
+  border-color: var(--ub-color-primary);
+}
+
+.input:focus-visible ~ .box {
+  outline: 2px solid var(--ub-color-primary);
+  outline-offset: 2px;
+}
+
+.checked .box,
+.indeterminate .box {
+  background-color: var(--ub-color-primary);
+  border-color: var(--ub-color-primary);
+}
+
+/* ── Icons ── */
+
+.checkIcon {
+  display: none;
+}
+
+.checked .checkIcon {
+  display: block;
+}
+
+.dashIcon {
+  display: none;
+}
+
+.indeterminate .dashIcon {
+  display: block;
+}
+
+/* ── Label ── */
+
+.label {
+  font-family: var(--ub-font-body);
+  font-size: var(--ub-text-body-md);
+  color: var(--ub-color-on-surface);
+  line-height: 1.2;
+  user-select: none;
+}
+
+.sm .label {
+  font-size: var(--ub-text-body-sm);
+}

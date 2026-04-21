@@ -1,0 +1,25 @@
+.row { display: grid; grid-template-columns: var(--ub-row-grid-template, 240px 200px 150px 110px 110px 80px); align-items: center; min-height: 52px; padding: 6px 0; border-bottom: 0.5px solid var(--ub-ghost-border); font-family: var(--ub-font-body); }
+.row:last-child { border-bottom: none; }
+.borderInvited { border-left: 2px solid var(--ub-color-warning); }
+.borderSuspended { border-left: 2px solid var(--ub-color-error); opacity: 0.65; }
+.cell { padding: 0 6px; display: flex; align-items: center; min-width: 0; }
+
+.agentCell { display: flex; align-items: center; gap: 8px; padding: 0 6px; min-width: 0; }
+.agentInfo { display: flex; flex-direction: column; gap: 1px; min-width: 0; }
+.agentName { font-size: 13px; font-weight: 500; color: var(--ub-color-on-surface); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.agentEmail { font-size: 11px; color: var(--ub-color-on-surface-variant); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+.rolesCell { display: flex; align-items: center; gap: 4px; padding: 0 6px; flex-wrap: wrap; min-width: 0; }
+.moreRoles { font-size: 11px; color: var(--ub-color-on-surface-variant); }
+
+.scopeCell { font-size: 12px; color: var(--ub-color-on-surface-variant); padding: 0 6px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.lastActive { font-size: 11px; color: var(--ub-color-on-surface-variant); padding: 0 6px; }
+.invitedTime { color: var(--ub-color-warning); }
+
+.statusCell { display: flex; align-items: center; gap: 4px; padding: 0 6px; font-size: 12px; color: var(--ub-color-on-surface-variant); }
+
+.actions { display: flex; gap: 2px; padding: 0 6px; }
+.confirmRow { display: flex; align-items: center; gap: 4px; font-size: 10px; color: var(--ub-color-on-surface-variant); padding: 0 6px; }
+.confirmBtn { font-family: var(--ub-font-body); font-size: 10px; font-weight: 600; border: none; border-radius: var(--ub-radius-sm); padding: 2px 6px; cursor: pointer; }
+.confirmDanger { background-color: var(--ub-color-error); color: var(--ub-color-on-error); }
+.confirmCancel { background: none; color: var(--ub-color-on-surface-variant); }

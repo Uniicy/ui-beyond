@@ -1,0 +1,52 @@
+.row {
+  display: grid;
+  grid-template-columns: var(--ub-row-grid-template, 160px 200px 130px 100px 100px 130px);
+  align-items: center;
+  height: 44px;
+  padding: 4px 0;
+  border-bottom: 0.5px solid var(--ub-ghost-border);
+  font-family: var(--ub-font-body);
+}
+
+.row:last-child { border-bottom: none; }
+
+.hit {
+  border-left: 2px solid var(--ub-color-error);
+  background-color: color-mix(in srgb, var(--ub-color-error) 3%, transparent);
+}
+
+/* ── Cells ── */
+.cell { padding: 0 6px; display: flex; align-items: center; min-width: 0; }
+
+/* ── Timestamp ── */
+.tsCell { display: flex; flex-direction: column; gap: 1px; padding: 0 6px; }
+.tsDate { font-family: var(--ub-font-mono); font-size: 11px; color: var(--ub-color-on-surface); line-height: 1.2; }
+.tsTime { font-family: var(--ub-font-mono); font-size: 10px; color: var(--ub-color-on-surface-variant); line-height: 1.2; }
+
+/* ── Player ── */
+.playerCell { display: flex; align-items: center; gap: var(--ub-space-2); padding: 0 6px; min-width: 0; }
+.playerName { font-size: 13px; color: var(--ub-color-on-surface); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.playerLink { font-size: 13px; color: var(--ub-color-primary); background: none; border: none; padding: 0; cursor: pointer; font-family: inherit; text-decoration: underline; text-underline-offset: 2px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; transition: opacity var(--ub-transition-fast); }
+.playerLink:hover { opacity: 0.75; }
+
+/* ── Result ── */
+.resultCell { display: flex; flex-direction: column; gap: 2px; padding: 0 6px; }
+.resultRow { display: flex; align-items: center; gap: 4px; }
+.resultLabel { font-size: 13px; font-weight: 500; line-height: 1; }
+.resultClear { color: var(--ub-color-tertiary-fixed); }
+.resultHit { color: var(--ub-color-error); }
+.oasisRef { font-family: var(--ub-font-mono); font-size: 10px; color: var(--ub-color-on-surface-variant); line-height: 1; }
+
+/* ── Response ── */
+.response { font-family: var(--ub-font-mono); font-size: 12px; font-variant-numeric: tabular-nums; line-height: 1; padding: 0 6px; }
+.respFast { color: var(--ub-color-tertiary-fixed); }
+.respMedium { color: var(--ub-color-warning); }
+.respSlow { color: var(--ub-color-error); }
+
+/* ── Session ── */
+.session { font-size: 12px; font-weight: 500; line-height: 1; padding: 0 6px; }
+.sessionAllowed { color: var(--ub-color-tertiary-fixed); }
+.sessionBlocked { color: var(--ub-color-error); }
+
+/* ── Check ID ── */
+.checkId { font-family: var(--ub-font-mono); font-size: 10px; color: var(--ub-color-on-surface-variant); padding: 0 6px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }

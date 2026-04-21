@@ -1,0 +1,118 @@
+.row {
+  font-family: var(--ub-font-body);
+  display: grid;
+  grid-template-columns: var(--ub-row-grid-template, 220px 200px 160px 60px 70px);
+  align-items: center;
+  height: 48px;
+  padding: 0 8px;
+  border-bottom: 0.5px solid var(--ub-ghost-border);
+  transition: opacity var(--ub-transition-base);
+}
+
+.row:last-child { border-bottom: none; }
+
+.inactive { opacity: 0.65; }
+
+.wildcardBorder { border-left: 2px solid color-mix(in srgb, var(--ub-color-primary) 50%, transparent); }
+
+/* ── Pattern ── */
+.patternCell { min-width: 0; overflow: hidden; }
+.patternText {
+  font-family: var(--ub-font-mono);
+  font-size: 13px;
+  color: var(--ub-color-on-surface);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+}
+.wildcard {
+  color: var(--ub-color-primary);
+  font-weight: 700;
+}
+
+/* ── Channel ── */
+.channelCell { display: flex; align-items: center; gap: 8px; min-width: 0; }
+
+.channelBadge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border-radius: var(--ub-radius-sm);
+  font-size: 12px;
+  font-weight: 700;
+  flex-shrink: 0;
+  line-height: 1;
+}
+
+.channelSlack {
+  background-color: color-mix(in srgb, var(--ub-color-tertiary) 12%, transparent);
+  color: var(--ub-color-tertiary);
+}
+
+.channelEmail {
+  background-color: var(--ub-color-surface-container-high);
+  color: var(--ub-color-on-surface-variant);
+}
+
+.channelWebhook {
+  background-color: color-mix(in srgb, var(--ub-color-primary) 10%, transparent);
+  color: var(--ub-color-primary);
+}
+
+.channelIcon {
+  font-size: 12px;
+  line-height: 1;
+}
+
+.channelIconSvg {
+  width: 14px;
+  height: 14px;
+}
+
+.channelTarget {
+  font-size: 12px;
+  color: var(--ub-color-on-surface);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ── Throttle ── */
+.throttleCell { min-width: 0; }
+.throttleText { font-size: 12px; color: var(--ub-color-on-surface-variant); }
+.noThrottle { font-size: 12px; color: var(--ub-color-tertiary); font-style: italic; }
+
+/* ── Toggle ── */
+.toggleCell { display: flex; justify-content: center; }
+.srOnly { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+.toggle { display: inline-flex; cursor: pointer; }
+.toggleInput { position: absolute; opacity: 0; width: 0; height: 0; }
+.toggleTrack {
+  position: relative;
+  width: 32px;
+  height: 18px;
+  border-radius: var(--ub-radius-full);
+  background-color: var(--ub-color-outline-variant);
+  transition: background-color var(--ub-transition-fast);
+}
+.toggleActive { background-color: var(--ub-color-primary); }
+.toggleThumb {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background-color: white;
+  transition: transform var(--ub-transition-fast);
+}
+.toggleInput:checked + .toggleTrack .toggleThumb,
+.toggleActive .toggleThumb {
+  transform: translateX(14px);
+}
+
+/* ── Actions ── */
+.actionsCell { display: flex; align-items: center; gap: 2px; justify-content: flex-end; }

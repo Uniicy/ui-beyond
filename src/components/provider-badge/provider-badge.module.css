@@ -1,0 +1,109 @@
+.badge {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--ub-font-body);
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 1;
+  white-space: nowrap;
+  border-radius: var(--ub-radius-full);
+}
+
+/* ── Filled style ── */
+
+.filled {
+  padding: 2px 8px;
+}
+
+.filled.onfido {
+  background-color: color-mix(in srgb, var(--ub-color-primary) 10%, transparent);
+  color: var(--ub-color-primary);
+}
+
+.filled.jumio {
+  background-color: color-mix(in srgb, var(--ub-color-secondary) 15%, transparent);
+  color: var(--ub-color-secondary);
+}
+
+.filled.manual {
+  background-color: var(--ub-color-surface-container-high);
+  color: var(--ub-color-on-surface-variant);
+}
+
+.filled.trustly {
+  background-color: color-mix(in srgb, var(--ub-color-primary) 12%, transparent);
+  color: var(--ub-color-primary);
+}
+
+.filled.nuvei {
+  background-color: color-mix(in srgb, var(--ub-color-secondary) 12%, transparent);
+  color: var(--ub-color-secondary);
+}
+
+.filled.paysafe {
+  background-color: color-mix(in srgb, var(--ub-color-warning) 12%, transparent);
+  color: var(--ub-color-warning);
+}
+
+.filled.mcb_juice {
+  background-color: color-mix(in srgb, var(--ub-color-tertiary-fixed) 12%, transparent);
+  color: var(--ub-color-tertiary-fixed);
+}
+
+.filled.zimpler {
+  background-color: color-mix(in srgb, var(--ub-color-primary) 8%, transparent);
+  color: var(--ub-color-primary);
+}
+
+.filled.paypal {
+  background-color: color-mix(in srgb, var(--ub-color-primary) 10%, transparent);
+  color: var(--ub-color-primary);
+}
+
+/* ── Bordered style ── */
+
+.bordered {
+  padding: 2px 8px 2px 10px;
+  background-color: transparent;
+  border-left: 3px solid;
+}
+
+.bordered.onfido {
+  border-color: var(--ub-color-primary);
+  color: var(--ub-color-primary);
+}
+
+.bordered.jumio {
+  border-color: var(--ub-color-secondary);
+  color: var(--ub-color-secondary);
+}
+
+.bordered.manual {
+  border-color: var(--ub-color-on-surface-variant);
+  color: var(--ub-color-on-surface-variant);
+}
+
+.bordered.trustly  { border-color: var(--ub-color-primary); color: var(--ub-color-primary); }
+.bordered.nuvei    { border-color: var(--ub-color-secondary); color: var(--ub-color-secondary); }
+.bordered.paysafe  { border-color: var(--ub-color-warning); color: var(--ub-color-warning); }
+.bordered.mcb_juice { border-color: var(--ub-color-tertiary-fixed); color: var(--ub-color-tertiary-fixed); }
+.bordered.zimpler  { border-color: var(--ub-color-primary); color: var(--ub-color-primary); }
+.bordered.paypal   { border-color: var(--ub-color-primary); color: var(--ub-color-primary); }
+
+/* ── Outlined style (transparent bg, 1px coloured border) ── */
+
+.outlined {
+  padding: 2px 8px;
+  background-color: transparent;
+  border: 1px solid;
+}
+
+.outlined.onfido   { border-color: color-mix(in srgb, var(--ub-color-primary) 40%, transparent); color: var(--ub-color-primary); }
+.outlined.jumio    { border-color: color-mix(in srgb, var(--ub-color-secondary) 40%, transparent); color: var(--ub-color-secondary); }
+.outlined.manual   { border-color: var(--ub-ghost-border); color: var(--ub-color-on-surface-variant); }
+.outlined.trustly  { border-color: color-mix(in srgb, var(--ub-color-primary) 40%, transparent); color: var(--ub-color-primary); }
+.outlined.nuvei    { border-color: color-mix(in srgb, var(--ub-color-secondary) 40%, transparent); color: var(--ub-color-secondary); }
+.outlined.paysafe  { border-color: color-mix(in srgb, var(--ub-color-warning) 40%, transparent); color: var(--ub-color-warning); }
+.outlined.mcb_juice { border-color: color-mix(in srgb, var(--ub-color-tertiary-fixed) 40%, transparent); color: var(--ub-color-tertiary-fixed); }
+.outlined.zimpler  { border-color: color-mix(in srgb, var(--ub-color-primary) 30%, transparent); color: var(--ub-color-primary); }
+.outlined.paypal   { border-color: color-mix(in srgb, var(--ub-color-primary) 35%, transparent); color: var(--ub-color-primary); }

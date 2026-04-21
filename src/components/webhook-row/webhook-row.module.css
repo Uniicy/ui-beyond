@@ -1,0 +1,35 @@
+.row { display: grid; grid-template-columns: var(--ub-row-grid-template, 280px 90px 90px 160px 90px 100px 60px); align-items: center; min-height: 52px; padding: 6px 0; border-bottom: 0.5px solid var(--ub-ghost-border); font-family: var(--ub-font-body); cursor: pointer; transition: background-color var(--ub-transition-fast); }
+.row:last-child { border-bottom: none; }
+.row:hover { background-color: var(--ub-color-surface-container-low); }
+.inactive { opacity: 0.65; }
+.borderWarning { border-left: 2px solid var(--ub-color-warning); }
+.cell { padding: 0 6px; display: flex; align-items: center; min-width: 0; }
+
+.urlCell { display: flex; flex-direction: column; gap: 1px; padding: 0 6px; min-width: 0; }
+.urlRow { display: flex; align-items: center; gap: 4px; }
+.url { font-family: var(--ub-font-mono); font-size: 12px; color: var(--ub-color-on-surface); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.desc { font-size: 11px; color: var(--ub-color-on-surface-variant); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+.events { font-size: 12px; color: var(--ub-color-on-surface-variant); padding: 0 6px; }
+.statusCell { display: flex; align-items: center; gap: 4px; padding: 0 6px; font-size: 12px; color: var(--ub-color-on-surface-variant); }
+.deliveryCell { display: flex; align-items: center; gap: 4px; padding: 0 6px; font-size: 11px; color: var(--ub-color-on-surface-variant); }
+.deliveryCode { font-family: var(--ub-font-mono); font-size: 10px; }
+
+.failures { font-family: var(--ub-font-mono); font-size: 12px; padding: 0 6px; font-variant-numeric: tabular-nums; }
+.failuresZero { color: var(--ub-color-on-surface-variant); }
+.failuresDanger { color: var(--ub-color-error); font-weight: 500; }
+
+.testBtn { padding: 4px 10px; border: none; border-radius: var(--ub-radius-md); background: none; cursor: pointer; font-family: var(--ub-font-body); font-size: 11px; font-weight: 500; color: var(--ub-color-primary); transition: background-color var(--ub-transition-fast); white-space: nowrap; }
+.testBtn:hover { background-color: color-mix(in srgb, var(--ub-color-primary) 6%, transparent); }
+.testSuccess { color: var(--ub-color-tertiary-fixed); font-weight: 600; }
+.testFailure { color: var(--ub-color-error); font-weight: 600; }
+
+.toggle { position: relative; width: 32px; height: 18px; border-radius: 9px; border: none; cursor: pointer; padding: 0; transition: background-color var(--ub-transition-fast); flex-shrink: 0; }
+.toggleOn { background-color: var(--ub-color-primary); }
+.toggleOff { background-color: var(--ub-color-surface-container-highest); }
+.toggleKnob { position: absolute; top: 2px; width: 14px; height: 14px; border-radius: 50%; background-color: #ffffff; transition: left var(--ub-transition-fast); }
+.toggleOn .toggleKnob { left: 16px; }
+.toggleOff .toggleKnob { left: 2px; }
+
+@keyframes spin { to { transform: rotate(360deg); } }
+.spinner { animation: spin 0.8s linear infinite; display: inline-block; }

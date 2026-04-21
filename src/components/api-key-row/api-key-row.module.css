@@ -1,0 +1,31 @@
+.row { display: grid; grid-template-columns: var(--ub-row-grid-template, 180px 240px 180px 100px 100px 100px 100px); align-items: center; min-height: 52px; padding: 6px 0; border-bottom: 0.5px solid var(--ub-ghost-border); font-family: var(--ub-font-body); }
+.row:last-child { border-bottom: none; }
+.revoked, .expired { opacity: 0.65; }
+.cell { padding: 0 6px; display: flex; align-items: center; min-width: 0; }
+
+.nameCell { display: flex; flex-direction: column; gap: 3px; padding: 0 6px; }
+.keyName { font-size: 13px; font-weight: 500; color: var(--ub-color-on-surface); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.envBadge { display: inline-flex; padding: 1px 5px; border-radius: var(--ub-radius-full); font-size: 9px; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; align-self: flex-start; }
+.envProd { background-color: color-mix(in srgb, var(--ub-color-error) 12%, transparent); color: var(--ub-color-error); }
+.envStaging { background-color: color-mix(in srgb, var(--ub-color-primary) 10%, transparent); color: var(--ub-color-primary); }
+
+.keyCell { display: flex; flex-direction: column; gap: 2px; padding: 0 6px; min-width: 0; }
+.keyRow { display: flex; align-items: center; gap: 4px; }
+.keyText { font-family: var(--ub-font-mono); font-size: 12px; color: var(--ub-color-on-surface); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.keyRevealed { color: var(--ub-color-primary); font-weight: 500; }
+.countdown { font-size: 10px; color: var(--ub-color-on-surface-variant); }
+
+.scopesCell { display: flex; align-items: center; gap: 3px; padding: 0 6px; flex-wrap: wrap; min-width: 0; }
+.moreScopes { font-size: 11px; color: var(--ub-color-on-surface-variant); }
+
+.meta { font-size: 11px; color: var(--ub-color-on-surface-variant); padding: 0 6px; }
+.metaDanger { color: var(--ub-color-error); }
+
+.actions { display: flex; gap: 2px; padding: 0 6px; }
+
+/* Revoke inline */
+.revokeBar { grid-column: 1 / -1; display: flex; align-items: center; gap: 8px; padding: 8px 6px; background-color: color-mix(in srgb, var(--ub-color-error) 5%, transparent); font-size: 12px; color: var(--ub-color-on-surface-variant); }
+.revokeBtn { font-family: var(--ub-font-body); font-size: 12px; font-weight: 600; border: none; border-radius: var(--ub-radius-sm); padding: 4px 10px; cursor: pointer; background-color: var(--ub-color-error); color: var(--ub-color-on-error); }
+.cancelLink { font-family: var(--ub-font-body); font-size: 12px; color: var(--ub-color-on-surface-variant); background: none; border: none; padding: 0; cursor: pointer; }
+
+.deleteLink { font-size: 11px; color: var(--ub-color-on-surface-variant); background: none; border: none; padding: 0; cursor: pointer; text-decoration: underline; }

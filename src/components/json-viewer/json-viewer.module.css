@@ -1,0 +1,415 @@
+/* ── Container ── */
+
+.jsonViewer {
+  font-family: var(--ub-font-mono);
+  font-size: 12px;
+  line-height: 1.6;
+  position: relative;
+}
+
+/* ── Toolbar ── */
+
+.toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  min-height: 22px;
+  margin-bottom: var(--ub-space-1);
+}
+
+/* ── Expand / Collapse controls ── */
+
+.expandControls {
+  display: flex;
+  align-items: center;
+  gap: var(--ub-space-1);
+  margin-left: auto;
+}
+
+.controlLink {
+  all: unset;
+  font-family: var(--ub-font-mono);
+  font-size: 11px;
+  cursor: pointer;
+  transition: color var(--ub-transition-fast);
+}
+
+.controlSep {
+  font-size: 11px;
+  user-select: none;
+}
+
+/* ── Search bar ── */
+
+.searchBar {
+  display: flex;
+  align-items: center;
+  gap: var(--ub-space-2);
+  width: 100%;
+}
+
+.searchInput {
+  all: unset;
+  flex: 1;
+  font-family: var(--ub-font-mono);
+  font-size: 11px;
+  padding: var(--ub-space-1) var(--ub-space-2);
+  border-radius: var(--ub-radius-sm);
+  transition:
+    border-color var(--ub-transition-fast),
+    background var(--ub-transition-fast);
+}
+
+.searchInput::placeholder {
+  opacity: 0.5;
+}
+
+.matchCount {
+  font-family: var(--ub-font-mono);
+  font-size: 11px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.clearBtn {
+  all: unset;
+  font-size: 14px;
+  cursor: pointer;
+  line-height: 1;
+  width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--ub-radius-sm);
+  transition: background var(--ub-transition-fast);
+  flex-shrink: 0;
+}
+
+/* ── Tree ── */
+
+.tree {
+  overflow-x: auto;
+}
+
+/* ── Node ── */
+
+.node {
+  user-select: none;
+}
+
+/* ── Row ── */
+
+.row {
+  display: flex;
+  align-items: center;
+  height: 22px;
+  padding-right: var(--ub-space-4);
+  border-radius: var(--ub-radius-sm);
+  transition: background var(--ub-transition-fast);
+  cursor: default;
+  position: relative;
+}
+
+.row[role='button'] {
+  cursor: pointer;
+}
+
+/* ── Caret ── */
+
+.caretSlot {
+  width: 14px;
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.caret {
+  display: inline-block;
+  font-size: 8px;
+  transition: transform var(--ub-transition-fast);
+  line-height: 1;
+}
+
+.caretOpen {
+  transform: rotate(90deg);
+}
+
+/* ── Key / value ── */
+
+.key {
+  font-weight: 500;
+  flex-shrink: 0;
+}
+
+.colon {
+  flex-shrink: 0;
+}
+
+/* ── Preview (collapsed) ── */
+
+.preview {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.previewKey {
+  font-weight: 400;
+}
+
+.bracket {
+  font-weight: 400;
+}
+
+/* ── Copy button ── */
+
+.copySlot {
+  margin-left: auto;
+  flex-shrink: 0;
+  opacity: 0;
+  transition: opacity var(--ub-transition-fast);
+}
+
+.row:hover .copySlot {
+  opacity: 1;
+}
+
+.copyBtn {
+  all: unset;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 1px;
+  border-radius: var(--ub-radius-sm);
+  transition: background var(--ub-transition-fast);
+  position: relative;
+}
+
+.copiedTooltip {
+  font-family: var(--ub-font-body);
+  font-size: 10px;
+  font-weight: 500;
+  white-space: nowrap;
+  padding: 2px 6px;
+  border-radius: var(--ub-radius-sm);
+  pointer-events: none;
+}
+
+/* ── Children ── */
+
+.children {
+  /* structural only — indent via paddingLeft on row */
+}
+
+/* ── Highlighted (search match) ── */
+
+.highlighted {
+  border-radius: var(--ub-radius-sm);
+}
+
+/* ─────────────────────────────────────────────────
+   Dark theme (default)
+   ───────────────────────────────────────────────── */
+
+.dark .key {
+  color: var(--ub-color-on-surface);
+}
+
+.dark .colon {
+  color: var(--ub-color-outline);
+}
+
+.dark .string {
+  color: var(--ub-color-tertiary-fixed);
+}
+
+.dark .number {
+  color: var(--ub-color-primary);
+}
+
+.dark .boolean,
+.dark .null {
+  color: var(--ub-color-warning);
+}
+
+.dark .preview {
+  color: var(--ub-color-on-surface-variant);
+}
+
+.dark .previewMore {
+  color: var(--ub-color-outline);
+}
+
+.dark .bracket {
+  color: var(--ub-color-on-surface-variant);
+}
+
+.dark .caret {
+  color: var(--ub-color-outline);
+}
+
+.dark .row:hover {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.dark .highlighted {
+  background: rgba(184, 197, 240, 0.1);
+}
+
+.dark .searchInput {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--ub-color-outline-variant);
+  color: var(--ub-color-on-surface);
+}
+
+.dark .searchInput:focus {
+  border-color: var(--ub-color-primary);
+}
+
+.dark .searchInput::placeholder {
+  color: var(--ub-color-outline);
+}
+
+.dark .matchCount {
+  color: var(--ub-color-on-surface-variant);
+}
+
+.dark .clearBtn {
+  color: var(--ub-color-outline);
+}
+
+.dark .clearBtn:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--ub-color-on-surface);
+}
+
+.dark .controlLink {
+  color: var(--ub-color-on-surface-variant);
+}
+
+.dark .controlLink:hover {
+  color: var(--ub-color-on-surface);
+}
+
+.dark .controlSep {
+  color: var(--ub-color-outline);
+}
+
+.dark .copyBtn {
+  color: var(--ub-color-outline);
+}
+
+.dark .copyBtn:hover {
+  color: var(--ub-color-on-surface);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.dark .copiedTooltip {
+  background: var(--ub-color-tertiary-container);
+  color: var(--ub-color-on-tertiary-container);
+}
+
+/* ─────────────────────────────────────────────────
+   Light theme
+   ───────────────────────────────────────────────── */
+
+.light .key {
+  color: var(--ub-color-on-surface);
+}
+
+.light .colon {
+  color: var(--ub-color-outline);
+}
+
+.light .string {
+  color: var(--ub-color-tertiary);
+}
+
+.light .number {
+  color: var(--ub-color-primary-container);
+}
+
+.light .boolean,
+.light .null {
+  color: var(--ub-color-warning);
+}
+
+.light .preview {
+  color: var(--ub-color-on-surface-variant);
+}
+
+.light .previewMore {
+  color: var(--ub-color-outline);
+}
+
+.light .bracket {
+  color: var(--ub-color-on-surface-variant);
+}
+
+.light .caret {
+  color: var(--ub-color-outline);
+}
+
+.light .row:hover {
+  background: rgba(0, 0, 0, 0.03);
+}
+
+.light .highlighted {
+  background: rgba(19, 27, 46, 0.06);
+}
+
+.light .searchInput {
+  background: var(--ub-color-surface-container-low);
+  border: 1px solid var(--ub-color-outline-variant);
+  color: var(--ub-color-on-surface);
+}
+
+.light .searchInput:focus {
+  border-color: var(--ub-color-primary);
+}
+
+.light .searchInput::placeholder {
+  color: var(--ub-color-outline);
+}
+
+.light .matchCount {
+  color: var(--ub-color-on-surface-variant);
+}
+
+.light .clearBtn {
+  color: var(--ub-color-outline);
+}
+
+.light .clearBtn:hover {
+  background: rgba(0, 0, 0, 0.06);
+  color: var(--ub-color-on-surface);
+}
+
+.light .controlLink {
+  color: var(--ub-color-on-surface-variant);
+}
+
+.light .controlLink:hover {
+  color: var(--ub-color-on-surface);
+}
+
+.light .controlSep {
+  color: var(--ub-color-outline);
+}
+
+.light .copyBtn {
+  color: var(--ub-color-outline);
+}
+
+.light .copyBtn:hover {
+  color: var(--ub-color-on-surface);
+  background: rgba(0, 0, 0, 0.06);
+}
+
+.light .copiedTooltip {
+  background: var(--ub-color-tertiary);
+  color: var(--ub-color-on-tertiary);
+}

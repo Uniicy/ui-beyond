@@ -1,0 +1,107 @@
+.limitBar {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-family: var(--ub-font-body);
+}
+
+/* ── Row 1: label + source ── */
+
+.row1 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.limitLabel {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--ub-color-on-surface);
+  line-height: 1;
+}
+
+.sourceRow {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.lockIcon {
+  font-size: 12px;
+  color: var(--ub-color-on-surface-variant);
+  line-height: 1;
+}
+
+/* ── Row 3: amounts + reset ── */
+
+.row3 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.amounts {
+  font-family: var(--ub-font-mono);
+  font-size: 12px;
+  color: var(--ub-color-on-surface);
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+}
+
+.amountsBreached {
+  color: var(--ub-color-error);
+}
+
+.overLabel {
+  font-family: var(--ub-font-body);
+  font-weight: 500;
+}
+
+.resetDate {
+  font-size: 11px;
+  color: var(--ub-color-on-surface-variant);
+  line-height: 1;
+}
+
+/* ── Row 4: edit link ── */
+
+.editLink {
+  font-family: var(--ub-font-body);
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--ub-color-primary);
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: opacity var(--ub-transition-fast);
+  align-self: flex-start;
+}
+
+.editLink:hover {
+  opacity: 0.75;
+}
+
+/* ── LimitGroup ── */
+
+.group {
+  background-color: var(--ub-color-surface-container-low);
+  border: 0.5px solid var(--ub-color-secondary-container);
+  border-radius: var(--ub-radius-xl);
+  overflow: hidden;
+}
+
+.groupHeader {
+  padding: 12px 16px;
+  font-family: var(--ub-font-body);
+  font-size: var(--ub-text-label-sm);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: var(--ub-tracking-label);
+  color: var(--ub-color-on-surface-variant);
+}
+
+.groupItem {
+  padding: 12px 16px;
+  border-top: 0.5px solid var(--ub-ghost-border);
+}

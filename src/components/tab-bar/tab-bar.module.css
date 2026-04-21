@@ -1,0 +1,71 @@
+.tabBar {
+  display: flex;
+  font-family: var(--ub-font-body);
+  overflow-x: auto;
+}
+
+.bordered {
+  border-bottom: 0.5px solid var(--ub-ghost-border);
+}
+
+.padded {
+  padding: 0 var(--ub-space-4);
+}
+
+/* ── Tab button ── */
+
+.tab {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-family: var(--ub-font-body);
+  font-weight: 400;
+  color: var(--ub-color-on-surface-variant);
+  white-space: nowrap;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -0.5px;
+  transition:
+    color var(--ub-transition-fast),
+    background-color var(--ub-transition-fast),
+    border-color var(--ub-transition-fast);
+}
+
+.tab:hover:not(:disabled) {
+  color: var(--ub-color-on-surface);
+  background-color: color-mix(in srgb, var(--ub-color-primary) 4%, transparent);
+}
+
+.tab:focus-visible {
+  outline: 2px solid var(--ub-color-primary);
+  outline-offset: -2px;
+  border-radius: var(--ub-radius-sm) var(--ub-radius-sm) 0 0;
+}
+
+.tab:disabled {
+  opacity: 0.4;
+  pointer-events: none;
+  cursor: not-allowed;
+}
+
+.tabActive {
+  color: var(--ub-color-primary);
+  font-weight: 500;
+  border-bottom-color: var(--ub-color-primary);
+}
+
+/* ── Sizes ── */
+
+.md .tab {
+  height: 44px;
+  padding: 0 14px;
+  font-size: 13px;
+}
+
+.sm .tab {
+  height: 36px;
+  padding: 0 10px;
+  font-size: 12px;
+}

@@ -1,0 +1,25 @@
+.section { padding: 16px 0; border-bottom: 0.5px solid var(--ub-ghost-border); }
+.section:last-child { border-bottom: none; }
+.sectionTitle { font-family: var(--ub-font-body); font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.07em; color: var(--ub-color-on-surface-variant); margin-bottom: 12px; line-height: 1; }
+
+.regulatoryNote { font-size: 11px; color: var(--ub-color-warning); margin-top: 6px; display: flex; align-items: center; gap: 4px; }
+
+.formGrid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.field { display: flex; flex-direction: column; gap: 4px; }
+.fieldFull { grid-column: 1 / -1; }
+.fieldLabel { font-family: var(--ub-font-body); font-size: 11px; font-weight: 600; color: var(--ub-color-on-surface-variant); }
+.fieldSelect, .fieldInput { height: 34px; padding: 0 10px; border: 0.5px solid var(--ub-color-secondary-container); border-radius: var(--ub-radius-md); background-color: var(--ub-color-surface-container-low); font-family: var(--ub-font-body); font-size: 13px; color: var(--ub-color-on-surface); }
+.fieldSelect:focus, .fieldInput:focus { outline: none; border-color: var(--ub-color-tertiary-fixed); }
+.fieldTextarea { width: 100%; min-height: 72px; padding: 8px 10px; border: 0.5px solid var(--ub-color-secondary-container); border-radius: var(--ub-radius-md); background-color: var(--ub-color-surface-container-low); font-family: var(--ub-font-body); font-size: 13px; color: var(--ub-color-on-surface); resize: vertical; }
+.fieldTextarea:focus { outline: none; border-color: var(--ub-color-tertiary-fixed); }
+.charCount { font-size: 10px; color: var(--ub-color-on-surface-variant); text-align: right; font-variant-numeric: tabular-nums; }
+.charCountLow { color: var(--ub-color-error); }
+
+.previewBar { margin-top: 8px; width: 80px; }
+
+.auditNote { font-size: 11px; color: var(--ub-color-on-surface-variant); margin-top: 12px; line-height: 1.5; }
+
+.lugasWarning { margin-top: 16px; padding: 12px 14px; background-color: color-mix(in srgb, var(--ub-color-warning) 10%, transparent); border: 1px solid color-mix(in srgb, var(--ub-color-warning) 30%, transparent); border-radius: var(--ub-radius-md); font-size: 12px; color: var(--ub-color-warning); line-height: 1.5; font-weight: 500; }
+.lugasCheckbox { margin-top: 10px; }
+
+.footer { display: flex; align-items: center; justify-content: space-between; }

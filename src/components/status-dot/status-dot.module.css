@@ -1,0 +1,80 @@
+.wrapper {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--ub-space-2);
+}
+
+.dot {
+  flex-shrink: 0;
+  border-radius: var(--ub-radius-full);
+}
+
+/* ── Sizes ── */
+
+.sm {
+  width: 5px;
+  height: 5px;
+}
+
+.md {
+  width: 7px;
+  height: 7px;
+}
+
+.lg {
+  width: 10px;
+  height: 10px;
+}
+
+/* ── Status colours ── */
+
+.live {
+  background-color: var(--ub-color-tertiary-fixed);
+}
+
+.ok {
+  background-color: var(--ub-color-tertiary-fixed);
+}
+
+.warning {
+  background-color: var(--ub-color-warning);
+}
+
+.error {
+  background-color: var(--ub-color-error);
+}
+
+.inactive {
+  background-color: var(--ub-color-on-surface-variant);
+}
+
+.pending {
+  background-color: var(--ub-color-primary);
+}
+
+/* ── Pulse animation ── */
+
+.pulse {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.4;
+    transform: scale(0.85);
+  }
+}
+
+/* ── Label ── */
+
+.label {
+  font-family: var(--ub-font-body);
+  font-size: var(--ub-text-label-sm);
+  line-height: 1;
+  color: var(--ub-color-on-surface-variant);
+}

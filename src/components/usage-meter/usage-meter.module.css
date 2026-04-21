@@ -1,0 +1,14 @@
+.meter { display: flex; flex-direction: column; gap: 3px; font-family: var(--ub-font-body); min-height: 56px; width: 100%; }
+.row1 { display: flex; align-items: center; justify-content: space-between; }
+.label { font-size: 11px; color: var(--ub-color-on-surface-variant); }
+.period { font-size: 10px; color: var(--ub-color-on-surface-variant); }
+.row2 { display: flex; align-items: baseline; gap: 6px; }
+.current { font-family: var(--ub-font-mono); font-size: 16px; font-weight: 500; font-variant-numeric: tabular-nums; }
+.success { color: var(--ub-color-tertiary-fixed); }
+.warning { color: var(--ub-color-warning); }
+.danger { color: var(--ub-color-error); }
+.neutral { color: var(--ub-color-on-surface-variant); }
+.quota { font-size: 12px; color: var(--ub-color-on-surface-variant); font-variant-numeric: tabular-nums; }
+.trend { font-size: 11px; margin-left: auto; }
+.trendUp { color: var(--ub-color-tertiary-fixed); }
+.trendDown { color: var(--ub-color-error); }

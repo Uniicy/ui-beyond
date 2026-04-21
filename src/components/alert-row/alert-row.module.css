@@ -1,0 +1,186 @@
+.row {
+  display: grid;
+  grid-template-columns: var(--ub-row-grid-template, 40px 220px 160px 90px 130px 90px 80px 80px 40px);
+  align-items: center;
+  min-height: 56px;
+  padding: 6px 0;
+  border-bottom: 0.5px solid var(--ub-ghost-border);
+  font-family: var(--ub-font-body);
+  transition: background-color var(--ub-transition-fast);
+  position: relative;
+}
+
+.row:last-child {
+  border-bottom: none;
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+.clickable:hover {
+  background-color: var(--ub-color-surface-container-low);
+}
+
+.selected {
+  background-color: color-mix(in srgb, var(--ub-color-primary) 5%, transparent);
+}
+
+.dismissed {
+  opacity: 0.6;
+}
+
+/* ── Severity left border ── */
+
+.borderCritical {
+  border-left: 2px solid var(--ub-color-error);
+}
+
+.borderHigh {
+  border-left: 2px solid color-mix(in srgb, var(--ub-color-error) 70%, transparent);
+}
+
+.borderMedium {
+  border-left: 2px solid var(--ub-color-warning);
+}
+
+/* ── Cells ── */
+
+.cell {
+  padding: 0 6px;
+  display: flex;
+  align-items: center;
+  min-width: 0;
+}
+
+.cellCheck {
+  justify-content: center;
+}
+
+/* ── Rule cell ── */
+
+.ruleCell {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 0 6px;
+  min-width: 0;
+}
+
+.ruleName {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--ub-color-on-surface);
+  line-height: 1.2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.alertType {
+  font-size: 11px;
+  color: var(--ub-color-on-surface-variant);
+  line-height: 1.2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* ── Player cell ── */
+
+.playerCell {
+  display: flex;
+  align-items: center;
+  gap: var(--ub-space-2);
+  padding: 0 6px;
+  min-width: 0;
+}
+
+.playerName {
+  font-size: 13px;
+  color: var(--ub-color-on-surface);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* ── Amount cell ── */
+
+.amountCell {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 0 6px;
+  align-items: flex-end;
+  min-width: 0;
+}
+
+.amount {
+  font-family: var(--ub-font-mono);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--ub-color-on-surface);
+  font-variant-numeric: tabular-nums;
+}
+
+.txnCount {
+  font-size: 11px;
+  color: var(--ub-color-on-surface-variant);
+}
+
+/* ── Agent cell ── */
+
+.agentCell {
+  display: flex;
+  align-items: center;
+  padding: 0 6px;
+}
+
+/* ── Time cell ── */
+
+.timeCell {
+  font-size: 11px;
+  color: var(--ub-color-on-surface-variant);
+  padding: 0 6px;
+  white-space: nowrap;
+}
+
+/* ── Quick actions (hover) ── */
+
+.quickActions {
+  display: none;
+  align-items: center;
+  gap: 2px;
+  padding: 0 4px;
+}
+
+.clickable:hover .quickActions {
+  display: flex;
+}
+
+.quickBtn {
+  padding: 3px 8px;
+  border: none;
+  border-radius: var(--ub-radius-md);
+  background: none;
+  cursor: pointer;
+  font-family: var(--ub-font-body);
+  font-size: 10px;
+  font-weight: 500;
+  color: var(--ub-color-on-surface-variant);
+  white-space: nowrap;
+  transition: background-color var(--ub-transition-fast), color var(--ub-transition-fast);
+}
+
+.quickBtn:hover {
+  background-color: var(--ub-color-surface-container);
+  color: var(--ub-color-on-surface);
+}
+
+/* ── Actions wrapper ── */
+
+.actionsCell {
+  display: flex;
+  justify-content: center;
+  padding: 0 6px;
+}

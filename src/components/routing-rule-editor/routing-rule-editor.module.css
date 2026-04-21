@@ -1,0 +1,42 @@
+.wrapper { font-family: var(--ub-font-body); display: flex; flex-direction: column; gap: 16px; }
+
+/* Header */
+.header { display: flex; align-items: center; justify-content: space-between; }
+.headerLeft { display: flex; align-items: center; gap: 8px; }
+.headerTitle { font-size: 15px; font-weight: 500; color: var(--ub-color-on-surface); }
+.headerCount { font-size: 12px; color: var(--ub-color-on-surface-variant); }
+.headerRight { display: flex; align-items: center; gap: 10px; }
+.statusDot { width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; }
+.statusSaved { background-color: var(--ub-color-tertiary-fixed); }
+.statusDirty { background-color: var(--ub-color-warning); }
+.statusLabel { font-size: 12px; color: var(--ub-color-on-surface-variant); display: flex; align-items: center; gap: 4px; }
+
+/* Rule list */
+.ruleList { display: flex; flex-direction: column; gap: 8px; }
+
+/* Inline edit */
+.editPanel { padding: 14px 16px; border: 1.5px solid var(--ub-color-primary); border-radius: var(--ub-radius-md); background-color: var(--ub-color-surface-container-low); display: flex; flex-direction: column; gap: 12px; }
+.editField { display: flex; flex-direction: column; gap: 4px; }
+.editLabel { font-size: 11px; font-weight: 600; color: var(--ub-color-on-surface-variant); }
+.editInput { height: 34px; padding: 0 10px; border: 0.5px solid var(--ub-color-secondary-container); border-radius: var(--ub-radius-md); background-color: var(--ub-color-surface-container-low); font-family: var(--ub-font-body); font-size: 13px; color: var(--ub-color-on-surface); }
+.editInput:focus { outline: none; border-color: var(--ub-color-tertiary-fixed); }
+.editSelect { height: 34px; padding: 0 10px; border: 0.5px solid var(--ub-color-secondary-container); border-radius: var(--ub-radius-md); background-color: var(--ub-color-surface-container-low); font-family: var(--ub-font-body); font-size: 12px; color: var(--ub-color-on-surface); }
+.editActions { display: flex; justify-content: flex-end; gap: 8px; }
+
+/* Add button */
+.addBtn { align-self: flex-start; padding: 8px 16px; border: 1px dashed var(--ub-color-secondary-container); border-radius: var(--ub-radius-md); background: none; cursor: pointer; font-family: var(--ub-font-body); font-size: 12px; font-weight: 500; color: var(--ub-color-primary); transition: border-color var(--ub-transition-fast); }
+.addBtn:hover { border-color: var(--ub-color-primary); }
+
+/* Test panel */
+.testPanel { border: 0.5px solid var(--ub-color-secondary-container); border-radius: var(--ub-radius-md); overflow: hidden; }
+.testToggle { width: 100%; padding: 10px 14px; border: none; background-color: var(--ub-color-surface-container-low); cursor: pointer; font-family: var(--ub-font-body); font-size: 12px; font-weight: 500; color: var(--ub-color-on-surface); text-align: left; display: flex; align-items: center; gap: 6px; }
+.testToggle:hover { background-color: var(--ub-color-surface-container); }
+.testContent { padding: 14px; display: flex; flex-direction: column; gap: 10px; }
+.testInputs { display: flex; gap: 8px; align-items: center; }
+.testInput { height: 34px; padding: 0 10px; border: 0.5px solid var(--ub-color-secondary-container); border-radius: var(--ub-radius-md); background-color: var(--ub-color-surface-container-low); font-family: var(--ub-font-body); font-size: 12px; color: var(--ub-color-on-surface); width: 120px; }
+.testResult { font-size: 12px; color: var(--ub-color-on-surface-variant); padding: 8px 10px; background-color: var(--ub-color-surface-container-low); border-radius: var(--ub-radius-md); line-height: 1.5; }
+.testMatch { color: var(--ub-color-tertiary-fixed); font-weight: 500; }
+.testNoMatch { color: var(--ub-color-on-surface-variant); }
+
+/* Drag overlay */
+.dragOverlay { opacity: 0.95; }

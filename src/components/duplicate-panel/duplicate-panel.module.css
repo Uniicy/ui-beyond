@@ -1,0 +1,169 @@
+/* ── Subheader ── */
+
+.subheader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 0;
+  border-bottom: 0.5px solid var(--ub-ghost-border);
+  font-family: var(--ub-font-body);
+}
+
+.subLeft {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.backLink {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--ub-color-primary);
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: opacity var(--ub-transition-fast);
+}
+
+.backLink:hover {
+  opacity: 0.75;
+}
+
+.divider {
+  width: 1px;
+  height: 20px;
+  background-color: var(--ub-ghost-border);
+}
+
+.title {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--ub-color-on-surface);
+}
+
+.subRight {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* ── Content ── */
+
+.content {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* ── Skeleton ── */
+
+.skeleton {
+  height: 280px;
+  border-radius: var(--ub-radius-lg);
+  background: linear-gradient(
+    90deg,
+    var(--ub-color-surface-container-high) 25%,
+    var(--ub-color-surface-container-highest) 50%,
+    var(--ub-color-surface-container-high) 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* ── Merge confirm modal ── */
+
+.modalBackdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 60;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal {
+  width: 440px;
+  background-color: var(--ub-color-surface);
+  border: 0.5px solid var(--ub-color-secondary-container);
+  border-radius: var(--ub-radius-lg);
+  padding: 24px;
+  font-family: var(--ub-font-body);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.modalTitle {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--ub-color-on-surface);
+}
+
+.modalDesc {
+  font-size: 13px;
+  color: var(--ub-color-on-surface-variant);
+  line-height: 1.5;
+}
+
+.modalPlayers {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--ub-color-on-surface);
+}
+
+.modalArrow {
+  color: var(--ub-color-on-surface-variant);
+  font-size: 16px;
+}
+
+.modalPrimary {
+  font-family: var(--ub-font-mono);
+  font-size: 11px;
+  color: var(--ub-color-on-surface-variant);
+}
+
+.modalActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+/* ── Toast ── */
+
+.toast {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 70;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  background-color: color-mix(in srgb, var(--ub-color-tertiary-fixed) 12%, var(--ub-color-surface));
+  border: 0.5px solid color-mix(in srgb, var(--ub-color-tertiary-fixed) 25%, transparent);
+  border-radius: var(--ub-radius-lg);
+  font-family: var(--ub-font-body);
+  font-size: 11px;
+  color: var(--ub-color-tertiary-fixed);
+  font-weight: 500;
+  box-shadow: var(--ub-shadow-elevated);
+  animation: toastIn 200ms ease;
+}
+
+@keyframes toastIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}

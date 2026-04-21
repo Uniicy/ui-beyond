@@ -1,0 +1,31 @@
+.section { padding: 16px 0; border-bottom: 0.5px solid var(--ub-ghost-border); }
+.section:last-child { border-bottom: none; }
+.sectionTitle { font-family: var(--ub-font-body); font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.07em; color: var(--ub-color-on-surface-variant); margin-bottom: 10px; }
+
+.field { display: flex; flex-direction: column; gap: 4px; }
+.fieldInput { height: 34px; padding: 0 10px; border: 0.5px solid var(--ub-color-secondary-container); border-radius: var(--ub-radius-md); background-color: var(--ub-color-surface-container-low); font-family: var(--ub-font-body); font-size: 13px; color: var(--ub-color-on-surface); width: 100%; }
+.fieldInput:focus { outline: none; border-color: var(--ub-color-tertiary-fixed); }
+.warning { font-size: 11px; color: var(--ub-color-warning); margin-top: 4px; }
+
+.groupLabel { font-size: 11px; font-weight: 600; color: var(--ub-color-on-surface-variant); padding: 8px 0 4px; }
+.roleItem { display: flex; align-items: flex-start; gap: 6px; padding: 4px 0; }
+.roleDesc { font-size: 11px; color: var(--ub-color-on-surface-variant); margin-top: 1px; }
+
+.radioGroup { display: flex; flex-direction: column; gap: 8px; }
+.radioOption { display: flex; align-items: center; gap: 6px; cursor: pointer; font-size: 13px; color: var(--ub-color-on-surface); }
+.radioInput { accent-color: var(--ub-color-primary); }
+.brandList { padding-left: 24px; margin-top: 6px; display: flex; flex-direction: column; gap: 4px; }
+
+.previewCard { padding: 12px 14px; background-color: var(--ub-color-surface-container-low); border-radius: var(--ub-radius-md); display: flex; flex-direction: column; gap: 8px; }
+.previewTop { display: flex; align-items: center; gap: 8px; }
+.previewEmail { font-size: 13px; font-weight: 500; color: var(--ub-color-on-surface); }
+.previewRoles { display: flex; gap: 4px; flex-wrap: wrap; }
+.previewScope { font-size: 11px; color: var(--ub-color-on-surface-variant); }
+.previewCaption { font-size: 11px; color: var(--ub-color-on-surface-variant); line-height: 1.5; }
+
+.footer { display: flex; align-items: center; justify-content: space-between; }
+
+.success { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; padding: 48px 0; text-align: center; }
+.successIcon { width: 40px; height: 40px; border-radius: 50%; background-color: color-mix(in srgb, var(--ub-color-tertiary-fixed) 15%, transparent); color: var(--ub-color-tertiary-fixed); display: flex; align-items: center; justify-content: center; font-size: 20px; }
+.successTitle { font-size: 14px; font-weight: 500; color: var(--ub-color-on-surface); }
+.successEmail { font-family: var(--ub-font-mono); font-size: 12px; color: var(--ub-color-on-surface-variant); }

@@ -1,0 +1,127 @@
+.header {
+  display: flex;
+  align-items: center;
+  gap: var(--ub-space-6);
+  padding: 14px 24px;
+  background-color: var(--ub-color-surface-container-low);
+  border-bottom: 0.5px solid var(--ub-ghost-border);
+  font-family: var(--ub-font-body);
+  min-height: 76px;
+}
+
+/* ── Left: avatar + identity ── */
+
+.left {
+  display: flex;
+  align-items: center;
+  gap: var(--ub-space-3);
+  flex-shrink: 0;
+}
+
+.identity {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.name {
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--ub-color-on-surface);
+  line-height: 1.2;
+}
+
+.email {
+  font-size: 13px;
+  color: var(--ub-color-on-surface-variant);
+  line-height: 1.2;
+}
+
+.dob {
+  font-size: 12px;
+  color: var(--ub-color-on-surface-variant);
+  line-height: 1.2;
+}
+
+/* ── Centre: badges + markets ── */
+
+.centre {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1;
+  min-width: 0;
+}
+
+.badges {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.markets {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-wrap: wrap;
+}
+
+/* ── Right: IDs + actions ── */
+
+.right {
+  display: flex;
+  align-items: center;
+  gap: var(--ub-space-4);
+  flex-shrink: 0;
+  margin-left: auto;
+}
+
+.ids {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  align-items: flex-end;
+}
+
+.playerIdRow {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.playerId {
+  font-family: var(--ub-font-mono);
+  font-size: 11px;
+  color: var(--ub-color-on-surface);
+  line-height: 1;
+}
+
+.externalId {
+  font-size: 10px;
+  color: var(--ub-color-on-surface-variant);
+  line-height: 1;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: var(--ub-space-2);
+}
+
+.flagBtn {
+  padding: 4px 10px;
+  border: none;
+  border-radius: var(--ub-radius-md);
+  background: none;
+  cursor: pointer;
+  font-family: var(--ub-font-body);
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--ub-color-error);
+  transition: background-color var(--ub-transition-fast);
+}
+
+.flagBtn:hover {
+  background-color: color-mix(in srgb, var(--ub-color-error) 8%, transparent);
+}

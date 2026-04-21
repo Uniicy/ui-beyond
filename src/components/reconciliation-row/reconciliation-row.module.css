@@ -1,0 +1,17 @@
+.row { display: grid; grid-template-columns: var(--ub-row-grid-template, 120px 110px 130px 130px 130px 100px 70px 100px); align-items: center; height: 44px; padding: 4px 0; border-bottom: 0.5px solid var(--ub-ghost-border); font-family: var(--ub-font-body); }
+.row:last-child { border-bottom: none; }
+.borderDanger { border-left: 2px solid var(--ub-color-error); }
+.borderWarning { border-left: 2px solid var(--ub-color-warning); }
+.cell { padding: 0 6px; display: flex; align-items: center; min-width: 0; }
+.date { font-family: var(--ub-font-mono); font-size: 12px; color: var(--ub-color-on-surface); padding: 0 6px; }
+.amount { font-family: var(--ub-font-mono); font-size: 13px; font-variant-numeric: tabular-nums; padding: 0 6px; justify-content: flex-end; color: var(--ub-color-on-surface); }
+.amountDanger { color: var(--ub-color-error); }
+.delta { font-family: var(--ub-font-mono); font-size: 13px; font-weight: 600; font-variant-numeric: tabular-nums; padding: 0 6px; justify-content: flex-end; }
+.deltaZero { color: var(--ub-color-outline); }
+.deltaPositive { color: var(--ub-color-tertiary-fixed); }
+.deltaNegative { color: var(--ub-color-error); }
+.agentCell { padding: 0 6px; display: flex; align-items: center; }
+.actionCell { padding: 0 6px; }
+.investigateLink { font-family: var(--ub-font-body); font-size: 11px; font-weight: 600; color: var(--ub-color-error); background: none; border: none; padding: 0; cursor: pointer; }
+.investigateLink:hover { opacity: 0.75; }
+.dash { font-size: 12px; color: var(--ub-color-outline); }

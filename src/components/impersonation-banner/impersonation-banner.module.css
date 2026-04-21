@@ -1,0 +1,51 @@
+.banner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 40px;
+  z-index: 9999;
+  background-color: var(--ub-color-error);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  font-family: var(--ub-font-body);
+}
+
+/* Left */
+.left { display: flex; align-items: center; gap: 8px; }
+.warnIcon { font-size: 14px; }
+.saLabel { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; }
+.divider { opacity: 0.5; }
+.impersonating { font-size: 13px; font-weight: 400; }
+
+/* Centre */
+.centre { position: absolute; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 0; }
+.timer { font-family: var(--ub-font-mono); font-size: 16px; font-weight: 600; font-variant-numeric: tabular-nums; line-height: 1; }
+.timerWhite { color: #ffffff; }
+.timerYellow { color: #FFD700; }
+.timerBlink { color: #ffffff; animation: blink 0.5s infinite; }
+.remainingLabel { font-size: 10px; opacity: 0.7; line-height: 1; }
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+/* Right */
+.endBtn {
+  height: 32px;
+  padding: 0 14px;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: var(--ub-radius-md);
+  background: transparent;
+  color: #ffffff;
+  font-family: var(--ub-font-body);
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 120ms ease;
+}
+.endBtn:hover { background-color: rgba(255, 255, 255, 0.15); }

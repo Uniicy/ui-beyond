@@ -1,0 +1,19 @@
+.sectionTitle {
+  font-family: var(--ub-font-body);
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--ub-color-on-surface-variant);
+  margin: 0 0 var(--ub-space-3) 0;
+  line-height: 1;
+}
+
+.sectionTitle[data-size='md'] {
+  font-size: 12px;
+}
+
+.sectionTitle[data-size='lg'] {
+  font-size: var(--ub-text-title-sm);
+  letter-spacing: var(--ub-tracking-label);
+}

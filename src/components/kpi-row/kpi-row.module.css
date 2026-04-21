@@ -1,0 +1,5 @@
+.kpiRow {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(var(--kpi-min, 200px), 1fr));
+  gap: var(--ub-space-4);
+}

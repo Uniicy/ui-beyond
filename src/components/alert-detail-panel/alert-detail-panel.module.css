@@ -1,0 +1,241 @@
+.section {
+  padding: 16px 0;
+  border-bottom: 0.5px solid var(--ub-ghost-border);
+}
+
+.section:last-child {
+  border-bottom: none;
+}
+
+.sectionTitle {
+  font-family: var(--ub-font-body);
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--ub-color-on-surface-variant);
+  margin-bottom: 12px;
+  line-height: 1;
+}
+
+/* ── Rule trigger ── */
+
+.ruleTrigger {
+  font-family: var(--ub-font-body);
+  font-size: 12px;
+  color: var(--ub-color-on-surface-variant);
+  margin-bottom: 10px;
+}
+
+.ruleTrigger strong {
+  color: var(--ub-color-on-surface);
+  font-weight: 500;
+}
+
+/* ── Player section ── */
+
+.playerCard {
+  display: flex;
+  gap: var(--ub-space-4);
+  align-items: flex-start;
+}
+
+.playerLeft {
+  display: flex;
+  align-items: center;
+  gap: var(--ub-space-3);
+  flex-shrink: 0;
+}
+
+.playerInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.playerName {
+  font-family: var(--ub-font-body);
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--ub-color-on-surface);
+}
+
+.playerId {
+  font-family: var(--ub-font-mono);
+  font-size: 11px;
+  color: var(--ub-color-on-surface-variant);
+}
+
+.playerGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px 16px;
+  flex: 1;
+}
+
+.gridItem {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.gridLabel {
+  font-family: var(--ub-font-body);
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--ub-color-on-surface-variant);
+  line-height: 1;
+}
+
+.gridValue {
+  font-family: var(--ub-font-body);
+  font-size: 12px;
+  color: var(--ub-color-on-surface);
+}
+
+.gridValueMono {
+  font-family: var(--ub-font-mono);
+  font-size: 12px;
+  color: var(--ub-color-on-surface);
+  font-variant-numeric: tabular-nums;
+}
+
+.cddNote {
+  margin-top: 10px;
+  font-family: var(--ub-font-body);
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--ub-color-warning);
+  padding: 6px 10px;
+  background-color: color-mix(in srgb, var(--ub-color-warning) 8%, transparent);
+  border-radius: var(--ub-radius-md);
+}
+
+/* ── Footer ── */
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--ub-space-3);
+}
+
+.footerLeft {
+  display: flex;
+  align-items: center;
+  gap: var(--ub-space-2);
+  position: relative;
+}
+
+.footerRight {
+  display: flex;
+  align-items: center;
+  gap: var(--ub-space-2);
+}
+
+/* ── Assign dropdown ── */
+
+.assignBtn {
+  display: flex;
+  align-items: center;
+  gap: var(--ub-space-1);
+  padding: 4px 10px;
+  border: none;
+  border-radius: var(--ub-radius-md);
+  background: none;
+  cursor: pointer;
+  font-family: var(--ub-font-body);
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--ub-color-on-surface-variant);
+  transition: background-color var(--ub-transition-fast);
+}
+
+.assignBtn:hover {
+  background-color: var(--ub-color-surface-container);
+}
+
+.assignDropdown {
+  position: absolute;
+  bottom: calc(100% + 4px);
+  left: 0;
+  background-color: var(--ub-color-surface-container-low);
+  border-radius: var(--ub-radius-lg);
+  box-shadow: var(--ub-shadow-elevated);
+  z-index: 10;
+  padding: var(--ub-space-1) 0;
+  min-width: 160px;
+}
+
+.assignItem {
+  display: flex;
+  align-items: center;
+  gap: var(--ub-space-2);
+  width: 100%;
+  padding: 7px 12px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-family: var(--ub-font-body);
+  font-size: 12px;
+  color: var(--ub-color-on-surface);
+  text-align: left;
+  transition: background-color var(--ub-transition-fast);
+}
+
+.assignItem:hover {
+  background-color: var(--ub-color-surface-container);
+}
+
+/* ── Inline confirmation ── */
+
+.inlineConfirm {
+  display: flex;
+  align-items: center;
+  gap: var(--ub-space-2);
+}
+
+.reasonSelect {
+  height: 32px;
+  padding: 0 var(--ub-space-2);
+  border: 0.5px solid var(--ub-color-secondary-container);
+  border-radius: var(--ub-radius-md);
+  background-color: var(--ub-color-surface-container-low);
+  font-family: var(--ub-font-body);
+  font-size: 12px;
+  color: var(--ub-color-on-surface);
+  cursor: pointer;
+}
+
+.noteInput {
+  height: 32px;
+  width: 180px;
+  padding: 0 var(--ub-space-2);
+  border: 0.5px solid var(--ub-color-secondary-container);
+  border-radius: var(--ub-radius-md);
+  background-color: var(--ub-color-surface-container-low);
+  font-family: var(--ub-font-body);
+  font-size: 12px;
+  color: var(--ub-color-on-surface);
+}
+
+.noteInput:focus {
+  outline: none;
+  border-color: var(--ub-color-tertiary-fixed);
+}
+
+.cancelLink {
+  font-family: var(--ub-font-body);
+  font-size: 12px;
+  color: var(--ub-color-on-surface-variant);
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.cancelLink:hover {
+  color: var(--ub-color-on-surface);
+}

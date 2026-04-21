@@ -1,0 +1,209 @@
+.card {
+  background-color: var(--ub-color-surface-container-low);
+  border: 0.5px solid var(--ub-color-secondary-container);
+  border-radius: var(--ub-radius-lg);
+  font-family: var(--ub-font-body);
+  overflow: hidden;
+}
+
+.high { border-left: 2px solid var(--ub-color-error); background-color: color-mix(in srgb, var(--ub-color-error) 3%, var(--ub-color-surface-container-low)); }
+.medium { border-left: 2px solid var(--ub-color-warning); }
+.low { border-left: 2px solid var(--ub-color-secondary-container); }
+
+.dismissed { opacity: 0.6; }
+
+/* ── Header ── */
+
+.header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 14px 16px 12px;
+}
+
+.headerLeft {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+
+.confidence {
+  font-family: var(--ub-font-display), var(--ub-font-mono);
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+
+.confHigh { color: var(--ub-color-error); }
+.confMedium { color: var(--ub-color-warning); }
+.confLow { color: var(--ub-color-on-surface-variant); }
+
+.bandLabel {
+  font-size: 12px;
+  color: var(--ub-color-on-surface-variant);
+  line-height: 1.2;
+}
+
+.headerRight {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.timestamp {
+  font-size: 11px;
+  color: var(--ub-color-on-surface-variant);
+  white-space: nowrap;
+}
+
+/* ── Player cards ── */
+
+.players {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  padding: 0 16px 14px;
+}
+
+.playerCard {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-right: 12px;
+}
+
+.playerCard:first-child {
+  border-right: 0.5px solid var(--ub-ghost-border);
+}
+
+.playerCard:last-child {
+  padding-left: 12px;
+  padding-right: 0;
+}
+
+.playerTop {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.playerInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  min-width: 0;
+}
+
+.playerName {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--ub-color-on-surface);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.playerEmail {
+  font-size: 12px;
+  color: var(--ub-color-on-surface-variant);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.playerDetails {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.joined {
+  font-size: 11px;
+  color: var(--ub-color-on-surface-variant);
+}
+
+.playerIdRow {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.playerId {
+  font-family: var(--ub-font-mono);
+  font-size: 10px;
+  color: var(--ub-color-on-surface-variant);
+}
+
+/* ── Signals ── */
+
+.signals {
+  border-top: 0.5px solid var(--ub-ghost-border);
+  padding: 12px 16px;
+}
+
+.signalsLabel {
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--ub-color-on-surface-variant);
+  margin-bottom: 8px;
+  line-height: 1;
+}
+
+.signalRow {
+  display: flex;
+  align-items: center;
+  height: 32px;
+  gap: 8px;
+}
+
+.signalField {
+  flex: 1;
+  font-size: 12px;
+  color: var(--ub-color-on-surface);
+  min-width: 0;
+}
+
+.signalBar {
+  width: 80px;
+  flex-shrink: 0;
+}
+
+.signalPct {
+  font-family: var(--ub-font-mono);
+  font-size: 11px;
+  font-variant-numeric: tabular-nums;
+  width: 32px;
+  text-align: right;
+  flex-shrink: 0;
+}
+
+.signalPctSuccess { color: var(--ub-color-tertiary-fixed); }
+.signalPctWarning { color: var(--ub-color-warning); }
+.signalPctDanger { color: var(--ub-color-error); }
+
+/* ── Actions ── */
+
+.actions {
+  border-top: 0.5px solid var(--ub-ghost-border);
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* ── Dismissed/Confirmed footer ── */
+
+.statusFooter {
+  border-top: 0.5px solid var(--ub-ghost-border);
+  padding: 10px 16px;
+  font-size: 11px;
+  color: var(--ub-color-on-surface-variant);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}

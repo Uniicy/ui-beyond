@@ -1,0 +1,144 @@
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--ub-space-2);
+  background-color: var(--ub-color-surface-container-low);
+  border-radius: 10px;
+  border: 0.5px solid var(--ub-color-secondary-container);
+  padding: var(--ub-space-4);
+  transition: border-color var(--ub-transition-base);
+}
+
+.card:hover {
+  border-color: var(--ub-color-primary);
+}
+
+/* ── Status left border ── */
+
+.statusOk {
+  border-left: 2px solid var(--ub-color-tertiary-fixed);
+}
+
+.statusWarning {
+  border-left: 2px solid var(--ub-color-warning);
+}
+
+.statusError {
+  border-left: 2px solid var(--ub-color-error);
+}
+
+/* ── Label ── */
+
+.label {
+  font-family: var(--ub-font-body);
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  line-height: 1;
+  color: var(--ub-color-on-surface-variant);
+}
+
+/* ── Value ── */
+
+.value {
+  font-family: var(--ub-font-display), var(--ub-font-mono);
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--ub-color-on-surface);
+  font-variant-numeric: tabular-nums;
+}
+
+/* ── Change text ── */
+
+.change {
+  font-family: var(--ub-font-body);
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 1;
+}
+
+.changePositive {
+  color: var(--ub-color-tertiary-fixed);
+}
+
+.changeNegative {
+  color: var(--ub-color-error);
+}
+
+.changeWarning {
+  color: var(--ub-color-warning);
+}
+
+.changeNeutral {
+  color: var(--ub-color-on-surface-variant);
+}
+
+/* ── Footer row ── */
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--ub-space-2);
+  min-height: 16px;
+}
+
+/* ── Action link ── */
+
+.action {
+  margin-left: auto;
+  font-family: var(--ub-font-body);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--ub-color-primary);
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: opacity var(--ub-transition-fast);
+}
+
+.action:hover {
+  opacity: 0.75;
+}
+
+/* ── Skeleton shimmer ── */
+
+.skeleton {
+  border-radius: var(--ub-radius-sm);
+  background: linear-gradient(
+    90deg,
+    var(--ub-color-surface-container-high) 25%,
+    var(--ub-color-surface-container-highest) 50%,
+    var(--ub-color-surface-container-high) 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s ease-in-out infinite;
+}
+
+.skeletonLabel {
+  width: 80px;
+  height: 10px;
+}
+
+.skeletonValue {
+  width: 120px;
+  height: 28px;
+}
+
+.skeletonChange {
+  width: 64px;
+  height: 11px;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}

@@ -1,0 +1,364 @@
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  background-color: var(--ub-color-surface-container-lowest);
+  font-family: var(--ub-font-body);
+  overflow: hidden;
+  position: relative;
+  container-type: inline-size;
+  container-name: ub-sidebar;
+}
+
+.superadmin {
+  background-color: var(--ub-color-surface-dim);
+}
+
+.superadminLabel {
+  font-size: 9px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--ub-color-error);
+  line-height: 1;
+}
+
+/* ── Brand switcher ── */
+
+.brandSwitcher {
+  display: flex;
+  align-items: center;
+  gap: var(--ub-space-2);
+  padding: 14px 16px;
+  cursor: pointer;
+  border: none;
+  background: none;
+  width: 100%;
+  text-align: left;
+  font-family: var(--ub-font-body);
+  transition: background-color var(--ub-transition-fast);
+  position: relative;
+}
+
+.brandSwitcher:hover {
+  background-color: var(--ub-color-surface-container-low);
+}
+
+.brandLogo {
+  width: 24px;
+  height: 24px;
+  border-radius: var(--ub-radius-md);
+  background: var(--ub-gradient-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--ub-color-on-primary);
+  font-size: 11px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.brandMeta {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+  flex: 1;
+}
+
+.brandName {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ub-color-on-surface);
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.chevron {
+  font-size: 10px;
+  color: var(--ub-color-on-surface-variant);
+  transition: transform var(--ub-transition-fast);
+  flex-shrink: 0;
+}
+
+.chevronOpen {
+  transform: rotate(180deg);
+}
+
+/* ── Brand dropdown ── */
+
+.brandDropdown {
+  position: absolute;
+  top: 100%;
+  left: 8px;
+  right: 8px;
+  background-color: var(--ub-color-surface-container-low);
+  border-radius: var(--ub-radius-lg);
+  box-shadow: var(--ub-shadow-elevated);
+  z-index: 10;
+  padding: var(--ub-space-1) 0;
+  overflow: hidden;
+}
+
+.brandOption {
+  display: flex;
+  align-items: center;
+  gap: var(--ub-space-2);
+  width: 100%;
+  padding: 8px 12px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-family: var(--ub-font-body);
+  font-size: 12px;
+  color: var(--ub-color-on-surface);
+  text-align: left;
+  transition: background-color var(--ub-transition-fast);
+}
+
+.brandOption:hover {
+  background-color: var(--ub-color-surface-container);
+}
+
+.brandOptionActive {
+  font-weight: 600;
+  color: var(--ub-color-primary);
+}
+
+/* ── Sections ── */
+
+.nav {
+  flex: 1;
+  overflow-y: auto;
+  padding: var(--ub-space-2) 0;
+}
+
+.section {
+  padding: var(--ub-space-1) 0;
+}
+
+.sectionLabel {
+  padding: 8px 16px 4px;
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--ub-color-on-surface-variant);
+  line-height: 1;
+}
+
+.sectionDivider {
+  display: none;
+  width: 20px;
+  height: 1px;
+  margin: 8px auto 4px;
+  background-color: var(--ub-ghost-border);
+}
+
+/* ── Nav item ── */
+
+.navItem {
+  display: flex;
+  align-items: center;
+  gap: var(--ub-space-2);
+  width: 100%;
+  padding: 8px 16px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-family: var(--ub-font-body);
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--ub-color-on-surface-variant);
+  text-align: left;
+  transition: background-color var(--ub-transition-fast), color var(--ub-transition-fast);
+  position: relative;
+  border-left: 2px solid transparent;
+}
+
+.navItem:hover {
+  background-color: var(--ub-color-surface-container-low);
+  color: var(--ub-color-on-surface);
+}
+
+.navItemActive {
+  border-left-color: var(--ub-color-primary);
+  background-color: color-mix(in srgb, var(--ub-color-primary) 8%, transparent);
+  color: var(--ub-color-primary);
+  font-weight: 600;
+}
+
+.navIcon {
+  width: 18px;
+  text-align: center;
+  font-size: 14px;
+  flex-shrink: 0;
+  line-height: 1;
+}
+
+.navLabel {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.navBadge {
+  flex-shrink: 0;
+}
+
+/* ── Tooltip (rendered always; revealed only on narrow container) ── */
+
+.tooltip {
+  display: none;
+  position: absolute;
+  left: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  margin-left: 8px;
+  padding: 4px 8px;
+  background-color: var(--ub-color-primary-container);
+  color: var(--ub-color-on-primary-container);
+  font-size: 11px;
+  font-weight: 500;
+  border-radius: var(--ub-radius-md);
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity var(--ub-transition-fast);
+  z-index: 20;
+}
+
+.navItem:hover .tooltip {
+  opacity: 1;
+}
+
+/* ── Bottom area ── */
+
+.bottom {
+  border-top: 0.5px solid var(--ub-ghost-border);
+  padding: var(--ub-space-2) 0;
+}
+
+/* ── Agent profile ── */
+
+.agent {
+  display: flex;
+  align-items: center;
+  gap: var(--ub-space-2);
+  padding: 10px 16px;
+}
+
+.avatar {
+  width: 28px;
+  height: 28px;
+  border-radius: var(--ub-radius-full);
+  background-color: var(--ub-color-surface-container-highest);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--ub-color-on-surface);
+  flex-shrink: 0;
+}
+
+.agentInfo {
+  flex: 1;
+  min-width: 0;
+}
+
+.agentName {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--ub-color-on-surface);
+  line-height: 1.2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.agentRole {
+  font-size: 10px;
+  color: var(--ub-color-on-surface-variant);
+  line-height: 1.2;
+}
+
+/* ── Collapse toggle (label — pure CSS) ── */
+
+.collapseToggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 10px 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: var(--ub-color-on-surface-variant);
+  font-size: 12px;
+  transition: color var(--ub-transition-fast);
+  user-select: none;
+}
+
+.collapseToggle:hover {
+  color: var(--ub-color-on-surface);
+}
+
+.collapseIconExpanded {
+  display: inline;
+}
+
+.collapseIconCollapsed {
+  display: none;
+}
+
+/* ── Narrow container: collapsed-rail styles ── */
+
+@container ub-sidebar (max-width: 120px) {
+  .brandMeta,
+  .brandName,
+  .chevron,
+  .navLabel,
+  .navBadge,
+  .agentInfo,
+  .sectionLabel {
+    display: none;
+  }
+
+  .brandSwitcher {
+    justify-content: center;
+    padding: 14px 0;
+  }
+
+  .sectionDivider {
+    display: block;
+  }
+
+  .navItem {
+    justify-content: center;
+    padding: 10px 0;
+    border-left: none;
+  }
+
+  .agent {
+    justify-content: center;
+    padding: 10px 0;
+  }
+
+  .tooltip {
+    display: block;
+  }
+
+  .collapseIconExpanded {
+    display: none;
+  }
+
+  .collapseIconCollapsed {
+    display: inline;
+  }
+}

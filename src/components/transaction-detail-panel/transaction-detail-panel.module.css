@@ -1,0 +1,43 @@
+.body { display: flex; flex-direction: column; gap: 24px; font-family: var(--ub-font-body); }
+
+/* ── Summary card ── */
+.summaryCard { padding: 16px; background-color: var(--ub-color-surface-container-low); border: 0.5px solid var(--ub-color-secondary-container); border-radius: var(--ub-radius-lg); display: flex; flex-direction: column; gap: 12px; }
+.amountRow { display: flex; align-items: baseline; gap: 12px; }
+.amount { font-family: var(--ub-font-mono); font-size: 24px; font-weight: 600; color: var(--ub-color-on-surface); font-variant-numeric: tabular-nums; }
+.typePill { font-size: 11px; font-weight: 600; padding: 2px 8px; border-radius: var(--ub-radius-full); text-transform: uppercase; letter-spacing: 0.04em; }
+.typeDeposit { background-color: color-mix(in srgb, var(--ub-color-tertiary) 12%, transparent); color: var(--ub-color-tertiary); }
+.typeWithdrawal { background-color: color-mix(in srgb, var(--ub-color-primary) 10%, transparent); color: var(--ub-color-on-surface); }
+.metaRow { display: flex; align-items: center; justify-content: space-between; min-height: 28px; }
+.metaLabel { font-size: 12px; color: var(--ub-color-on-surface-variant); }
+.metaMono { font-family: var(--ub-font-mono); font-size: 12px; color: var(--ub-color-on-surface); }
+.refRow { display: flex; align-items: center; gap: 4px; }
+
+/* ── Section ── */
+.section { display: flex; flex-direction: column; gap: 8px; }
+.sectionTitle { font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.07em; color: var(--ub-color-on-surface-variant); }
+
+/* ── Player card ── */
+.playerCard { display: flex; align-items: center; justify-content: space-between; padding: 12px 16px; background-color: var(--ub-color-surface-container-low); border: 0.5px solid var(--ub-color-secondary-container); border-radius: var(--ub-radius-lg); }
+.playerLeft { display: flex; align-items: center; gap: 10px; }
+.playerInfo { display: flex; flex-direction: column; gap: 2px; }
+.playerName { font-size: 14px; font-weight: 500; color: var(--ub-color-on-surface); }
+.playerId { display: flex; align-items: center; gap: 2px; font-family: var(--ub-font-mono); font-size: 11px; color: var(--ub-color-on-surface-variant); }
+
+/* ── Compliance checks ── */
+.checksList { display: flex; flex-direction: column; border: 0.5px solid var(--ub-color-secondary-container); border-radius: var(--ub-radius-lg); overflow: hidden; }
+.checkRow { display: flex; align-items: center; justify-content: space-between; padding: 10px 16px; border-bottom: 0.5px solid var(--ub-ghost-border); font-size: 13px; }
+.checkRow:last-child { border-bottom: none; }
+.checkLabel { color: var(--ub-color-on-surface); }
+.checkResult { display: flex; align-items: center; gap: 6px; font-size: 12px; color: var(--ub-color-on-surface-variant); }
+.checkFail { color: var(--ub-color-error); font-weight: 500; }
+
+/* ── Decision ── */
+.decisionCard { padding: 16px; background-color: var(--ub-color-surface-container-low); border: 0.5px solid var(--ub-color-secondary-container); border-radius: var(--ub-radius-lg); display: flex; flex-direction: column; gap: 12px; }
+.decisionActions { display: flex; gap: 8px; }
+.rejectSelect { display: flex; flex-direction: column; gap: 4px; }
+.select { font-family: var(--ub-font-body); font-size: 13px; padding: 8px 12px; border: 0.5px solid var(--ub-color-outline-variant); border-radius: var(--ub-radius-md); background-color: var(--ub-color-surface); color: var(--ub-color-on-surface); outline: none; }
+.select:focus { border-color: var(--ub-color-primary); }
+
+/* ── Outcome ── */
+.outcomeCard { display: flex; align-items: center; gap: 10px; padding: 12px 16px; background-color: var(--ub-color-surface-container-low); border: 0.5px solid var(--ub-color-secondary-container); border-radius: var(--ub-radius-lg); }
+.outcomeMeta { font-size: 12px; color: var(--ub-color-on-surface-variant); }

@@ -1,0 +1,45 @@
+.wrapper { display: flex; flex-direction: column; gap: 0; font-family: var(--ub-font-body); }
+
+/* ── Condition row ── */
+.condRow { display: flex; align-items: center; gap: 8px; padding: 8px 0; }
+.condRowInvalid { border: 1px solid color-mix(in srgb, var(--ub-color-warning) 50%, transparent); border-radius: var(--ub-radius-md); padding: 8px; background-color: color-mix(in srgb, var(--ub-color-warning) 4%, transparent); }
+
+.fieldSelect, .opSelect, .valueSelect, .valueInput { height: 34px; padding: 0 10px; border: 0.5px solid var(--ub-color-secondary-container); border-radius: var(--ub-radius-md); background-color: var(--ub-color-surface-container-low); font-family: var(--ub-font-body); font-size: 12px; color: var(--ub-color-on-surface); }
+.fieldSelect:focus, .opSelect:focus, .valueSelect:focus, .valueInput:focus { outline: none; border-color: var(--ub-color-tertiary-fixed); }
+.fieldSelect { width: 180px; flex-shrink: 0; }
+.opSelect { width: 160px; flex-shrink: 0; }
+.valueInput { flex: 1; min-width: 80px; }
+.valueSelect { flex: 1; min-width: 80px; }
+
+.currencyPrefix { display: flex; align-items: center; gap: 0; flex: 1; min-width: 80px; }
+.currencyLabel { height: 34px; padding: 0 8px; display: flex; align-items: center; border: 0.5px solid var(--ub-color-secondary-container); border-right: none; border-radius: var(--ub-radius-md) 0 0 var(--ub-radius-md); background-color: var(--ub-color-surface-container-high); font-family: var(--ub-font-mono); font-size: 12px; color: var(--ub-color-on-surface-variant); }
+.currencyInput { flex: 1; height: 34px; padding: 0 10px; border: 0.5px solid var(--ub-color-secondary-container); border-left: none; border-radius: 0 var(--ub-radius-md) var(--ub-radius-md) 0; background-color: var(--ub-color-surface-container-low); font-family: var(--ub-font-mono); font-size: 12px; color: var(--ub-color-on-surface); min-width: 60px; }
+.currencyInput:focus { outline: none; border-color: var(--ub-color-tertiary-fixed); }
+
+.betweenRow { display: flex; align-items: center; gap: 6px; flex: 1; }
+.betweenLabel { font-size: 11px; color: var(--ub-color-on-surface-variant); flex-shrink: 0; }
+
+/* ── Multi-select chips ── */
+.multiSelect { flex: 1; min-width: 80px; display: flex; flex-wrap: wrap; gap: 4px; padding: 4px 8px; min-height: 34px; border: 0.5px solid var(--ub-color-secondary-container); border-radius: var(--ub-radius-md); background-color: var(--ub-color-surface-container-low); align-items: center; cursor: pointer; position: relative; }
+.multiSelect:focus-within { border-color: var(--ub-color-tertiary-fixed); }
+.chipItem { display: inline-flex; align-items: center; gap: 3px; padding: 1px 6px; border-radius: var(--ub-radius-full); background-color: var(--ub-color-surface-container-high); font-size: 10px; font-weight: 500; color: var(--ub-color-on-surface); }
+.chipRemove { background: none; border: none; padding: 0; cursor: pointer; font-size: 10px; color: var(--ub-color-on-surface-variant); line-height: 1; }
+.multiDropdown { position: absolute; top: calc(100% + 4px); left: 0; right: 0; background-color: var(--ub-color-surface-container-low); border-radius: var(--ub-radius-lg); box-shadow: var(--ub-shadow-elevated); z-index: 10; padding: 4px 0; max-height: 160px; overflow-y: auto; }
+.multiOption { display: flex; align-items: center; gap: 6px; padding: 6px 10px; font-size: 12px; color: var(--ub-color-on-surface); cursor: pointer; transition: background-color var(--ub-transition-fast); }
+.multiOption:hover { background-color: var(--ub-color-surface-container); }
+.multiOptionActive { font-weight: 500; color: var(--ub-color-primary); }
+
+/* ── Conjunction ── */
+.conjunction { display: flex; align-items: center; justify-content: center; padding: 4px 0; }
+.conjPill { display: flex; border-radius: var(--ub-radius-full); overflow: hidden; border: 0.5px solid var(--ub-color-secondary-container); }
+.conjBtn { padding: 3px 12px; border: none; font-family: var(--ub-font-body); font-size: 10px; font-weight: 600; cursor: pointer; transition: background-color var(--ub-transition-fast), color var(--ub-transition-fast); }
+.conjActive { background-color: var(--ub-color-primary); color: var(--ub-color-on-primary); }
+.conjInactive { background-color: transparent; color: var(--ub-color-on-surface-variant); }
+
+/* ── Add button ── */
+.addBtn { align-self: flex-start; margin-top: 4px; padding: 6px 14px; border: 1px dashed var(--ub-color-secondary-container); border-radius: var(--ub-radius-md); background: none; cursor: pointer; font-family: var(--ub-font-body); font-size: 12px; font-weight: 500; color: var(--ub-color-primary); transition: border-color var(--ub-transition-fast); }
+.addBtn:hover { border-color: var(--ub-color-primary); }
+
+/* ── Preview ── */
+.preview { margin-top: 12px; padding: 8px 12px; background-color: var(--ub-color-surface-container-low); border-radius: var(--ub-radius-md); font-size: 12px; color: var(--ub-color-on-surface-variant); line-height: 1.5; }
+.previewStrong { color: var(--ub-color-on-surface); font-weight: 500; }

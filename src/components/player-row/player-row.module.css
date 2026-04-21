@@ -1,0 +1,184 @@
+.row {
+  display: grid;
+  grid-template-columns: var(--ub-row-grid-template, 40px 240px 110px 130px 100px 100px 90px 40px);
+  align-items: center;
+  min-height: 52px;
+  padding: 6px 0;
+  border-bottom: 0.5px solid var(--ub-ghost-border);
+  font-family: var(--ub-font-body);
+  transition: background-color var(--ub-transition-fast);
+  position: relative;
+}
+
+.row:last-child {
+  border-bottom: none;
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+.clickable:hover {
+  background-color: var(--ub-color-surface-container-low);
+}
+
+.selected {
+  background-color: color-mix(in srgb, var(--ub-color-primary) 5%, transparent);
+}
+
+.blocked {
+  opacity: 0.75;
+}
+
+/* ── Left border ── */
+
+.borderDanger {
+  border-left: 2px solid var(--ub-color-error);
+}
+
+.borderWarning {
+  border-left: 2px solid var(--ub-color-warning);
+}
+
+/* ── Cells ── */
+
+.cell {
+  padding: 0 6px;
+  display: flex;
+  align-items: center;
+  min-width: 0;
+}
+
+.cellCheck {
+  justify-content: center;
+}
+
+/* ── Player cell ── */
+
+.playerCell {
+  display: flex;
+  align-items: center;
+  gap: var(--ub-space-2);
+  padding: 0 6px;
+  min-width: 0;
+}
+
+.playerInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  min-width: 0;
+}
+
+.playerName {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--ub-color-on-surface);
+  line-height: 1.2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.playerEmail {
+  font-size: 11px;
+  color: var(--ub-color-on-surface-variant);
+  line-height: 1.2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* ── AML cell ── */
+
+.amlCell {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 6px;
+  min-width: 0;
+}
+
+/* ── RG cell ── */
+
+.rgCell {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 0 6px;
+  min-width: 0;
+}
+
+.rgNearLimit {
+  font-size: 11px;
+  color: var(--ub-color-on-surface-variant);
+  white-space: nowrap;
+}
+
+.rgDash {
+  font-size: 12px;
+  color: var(--ub-color-outline);
+}
+
+/* ── Markets cell ── */
+
+.marketsCell {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 0 6px;
+  flex-wrap: wrap;
+  min-width: 0;
+}
+
+/* ── Time ── */
+
+.timeCell {
+  font-size: 11px;
+  color: var(--ub-color-on-surface-variant);
+  padding: 0 6px;
+  white-space: nowrap;
+}
+
+/* ── Actions ── */
+
+.actionsWrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  padding: 0 6px;
+}
+
+.actionsDropdown {
+  position: absolute;
+  top: 100%;
+  right: 8px;
+  background-color: var(--ub-color-surface-container-low);
+  border-radius: var(--ub-radius-lg);
+  box-shadow: var(--ub-shadow-elevated);
+  z-index: 10;
+  padding: 4px 0;
+  min-width: 150px;
+}
+
+.actionItem {
+  display: block;
+  width: 100%;
+  padding: 7px 12px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-family: var(--ub-font-body);
+  font-size: 12px;
+  color: var(--ub-color-on-surface);
+  text-align: left;
+  transition: background-color var(--ub-transition-fast);
+}
+
+.actionItem:hover {
+  background-color: var(--ub-color-surface-container);
+}
+
+.actionDanger {
+  color: var(--ub-color-error);
+}

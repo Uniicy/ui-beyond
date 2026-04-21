@@ -1,0 +1,16 @@
+.panel {
+  background-color: var(--ub-color-surface-container-low);
+  border-radius: var(--ub-radius-xl);
+  border: 0.5px solid var(--ub-color-secondary-container);
+  overflow: hidden;
+}
+
+.header {
+  padding: 12px 14px;
+  font-family: var(--ub-font-body);
+  font-size: var(--ub-text-label-sm);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: var(--ub-tracking-label);
+  color: var(--ub-color-on-surface-variant);
+}

@@ -1,0 +1,48 @@
+.split {
+  display: grid;
+  gap: var(--ub-space-6);
+  align-items: start;
+  grid-template-columns: var(--split-cols, 1fr);
+}
+
+/* Collapse breakpoints — below threshold, stack to single column */
+
+.split[data-collapse-below='sm'] {
+  grid-template-columns: var(--split-cols, 1fr);
+}
+
+@media (min-width: 640px) {
+  .split[data-collapse-below='sm'] {
+    grid-template-columns: var(--split-cols-expanded, var(--split-cols));
+  }
+}
+
+.split[data-collapse-below='md'] {
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 768px) {
+  .split[data-collapse-below='md'] {
+    grid-template-columns: var(--split-cols-expanded, var(--split-cols));
+  }
+}
+
+.split[data-collapse-below='lg'] {
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 1024px) {
+  .split[data-collapse-below='lg'] {
+    grid-template-columns: var(--split-cols-expanded, var(--split-cols));
+  }
+}
+
+.split[data-collapse-below='xl'] {
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 1280px) {
+  .split[data-collapse-below='xl'] {
+    grid-template-columns: var(--split-cols-expanded, var(--split-cols));
+  }
+}

@@ -1,0 +1,223 @@
+.section {
+  padding: 16px 0;
+  border-bottom: 0.5px solid var(--ub-ghost-border);
+}
+
+.section:last-child {
+  border-bottom: none;
+}
+
+.sectionTitle {
+  font-family: var(--ub-font-body);
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--ub-color-on-surface-variant);
+  margin-bottom: 12px;
+  line-height: 1;
+}
+
+/* ── Document section ── */
+
+.docRow {
+  display: flex;
+  align-items: center;
+  gap: var(--ub-space-3);
+  margin-bottom: 12px;
+}
+
+.docIcon {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--ub-radius-lg);
+  background-color: var(--ub-color-surface-container-high);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  flex-shrink: 0;
+}
+
+.docInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.docType {
+  font-family: var(--ub-font-body);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--ub-color-on-surface);
+}
+
+.docMeta {
+  font-family: var(--ub-font-body);
+  font-size: 11px;
+  color: var(--ub-color-on-surface-variant);
+}
+
+.confidence {
+  font-family: var(--ub-font-mono);
+  font-size: 12px;
+  color: var(--ub-color-tertiary-fixed);
+  margin-top: 8px;
+}
+
+/* ── Player section ── */
+
+.playerRow {
+  display: flex;
+  align-items: center;
+  gap: var(--ub-space-3);
+  margin-bottom: 10px;
+}
+
+.playerInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.playerName {
+  font-family: var(--ub-font-body);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--ub-color-on-surface);
+}
+
+.playerEmail {
+  font-family: var(--ub-font-body);
+  font-size: 12px;
+  color: var(--ub-color-on-surface-variant);
+}
+
+.playerId {
+  font-family: var(--ub-font-mono);
+  font-size: 11px;
+  color: var(--ub-color-on-surface-variant);
+}
+
+.history {
+  font-family: var(--ub-font-body);
+  font-size: 12px;
+  color: var(--ub-color-on-surface-variant);
+  margin-top: 6px;
+}
+
+/* ── Notes section ── */
+
+.textarea {
+  width: 100%;
+  min-height: 64px;
+  padding: var(--ub-space-2) var(--ub-space-3);
+  border: 0.5px solid var(--ub-color-secondary-container);
+  border-radius: var(--ub-radius-md);
+  background-color: var(--ub-color-surface-container-low);
+  font-family: var(--ub-font-body);
+  font-size: 13px;
+  color: var(--ub-color-on-surface);
+  resize: vertical;
+  transition: border-color var(--ub-transition-fast);
+}
+
+.textarea::placeholder {
+  color: var(--ub-color-on-surface-variant);
+}
+
+.textarea:focus {
+  outline: none;
+  border-color: var(--ub-color-tertiary-fixed);
+}
+
+.noteSubmit {
+  margin-top: 8px;
+}
+
+/* ── Assign section ── */
+
+.assignRow {
+  display: flex;
+  align-items: center;
+  gap: var(--ub-space-2);
+}
+
+.assignLabel {
+  font-family: var(--ub-font-body);
+  font-size: 12px;
+  color: var(--ub-color-on-surface-variant);
+}
+
+.assignSelect {
+  height: 32px;
+  padding: 0 var(--ub-space-3);
+  border: 0.5px solid var(--ub-color-secondary-container);
+  border-radius: var(--ub-radius-md);
+  background-color: var(--ub-color-surface-container-low);
+  font-family: var(--ub-font-body);
+  font-size: 12px;
+  color: var(--ub-color-on-surface);
+  cursor: pointer;
+}
+
+/* ── Footer ── */
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footerLeft {
+  display: flex;
+  align-items: center;
+  gap: var(--ub-space-2);
+}
+
+.footerRight {
+  display: flex;
+  align-items: center;
+  gap: var(--ub-space-2);
+}
+
+/* ── Confirmation ── */
+
+.confirm {
+  display: flex;
+  align-items: center;
+  gap: var(--ub-space-2);
+  font-family: var(--ub-font-body);
+  font-size: 12px;
+  color: var(--ub-color-on-surface-variant);
+}
+
+.confirmText {
+  font-weight: 500;
+}
+
+/* ── Request info inline ── */
+
+.requestRow {
+  display: flex;
+  gap: var(--ub-space-2);
+  align-items: flex-start;
+  margin-top: 8px;
+}
+
+.requestInput {
+  flex: 1;
+  height: 32px;
+  padding: 0 var(--ub-space-3);
+  border: 0.5px solid var(--ub-color-secondary-container);
+  border-radius: var(--ub-radius-md);
+  background-color: var(--ub-color-surface-container-low);
+  font-family: var(--ub-font-body);
+  font-size: 12px;
+  color: var(--ub-color-on-surface);
+}
+
+.requestInput:focus {
+  outline: none;
+  border-color: var(--ub-color-tertiary-fixed);
+}

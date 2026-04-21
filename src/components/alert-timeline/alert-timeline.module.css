@@ -1,0 +1,257 @@
+/* ── Wrapper ── */
+
+.timeline {
+  display: flex;
+  flex-direction: column;
+  font-family: var(--ub-font-body);
+}
+
+/* ── Add note form ── */
+
+.noteForm {
+  margin-bottom: var(--ub-space-4);
+  padding-bottom: var(--ub-space-4);
+  border-bottom: 0.5px solid var(--ub-ghost-border);
+}
+
+.noteCollapsed {
+  padding: 8px 12px;
+  background-color: var(--ub-color-surface-container-low);
+  border-radius: var(--ub-radius-md);
+  border: 0.5px solid var(--ub-color-secondary-container);
+  font-size: 13px;
+  color: var(--ub-color-on-surface-variant);
+  cursor: pointer;
+  transition: border-color var(--ub-transition-fast);
+}
+
+.noteCollapsed:hover {
+  border-color: var(--ub-color-primary);
+}
+
+.noteExpanded {
+  display: flex;
+  gap: var(--ub-space-2);
+  align-items: flex-start;
+}
+
+.noteTextarea {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--ub-space-2);
+}
+
+.textarea {
+  width: 100%;
+  min-height: 64px;
+  padding: var(--ub-space-2) var(--ub-space-3);
+  border: 0.5px solid var(--ub-color-secondary-container);
+  border-radius: var(--ub-radius-md);
+  background-color: var(--ub-color-surface-container-low);
+  font-family: var(--ub-font-body);
+  font-size: 13px;
+  color: var(--ub-color-on-surface);
+  resize: vertical;
+  transition: border-color var(--ub-transition-fast);
+}
+
+.textarea::placeholder {
+  color: var(--ub-color-on-surface-variant);
+}
+
+.textarea:focus {
+  outline: none;
+  border-color: var(--ub-color-tertiary-fixed);
+}
+
+.noteActions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--ub-space-2);
+}
+
+.cancelLink {
+  font-family: var(--ub-font-body);
+  font-size: 12px;
+  color: var(--ub-color-on-surface-variant);
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: color var(--ub-transition-fast);
+}
+
+.cancelLink:hover {
+  color: var(--ub-color-on-surface);
+}
+
+/* ── Timeline line ── */
+
+.items {
+  position: relative;
+  padding-left: 20px;
+}
+
+.items::before {
+  content: '';
+  position: absolute;
+  left: 3px;
+  top: 4px;
+  bottom: 4px;
+  width: 1px;
+  background-color: var(--ub-color-secondary-container);
+}
+
+/* ── Item ── */
+
+.item {
+  position: relative;
+  padding-bottom: var(--ub-space-4);
+}
+
+.item:last-child {
+  padding-bottom: 0;
+}
+
+/* ── Dot ── */
+
+.dot {
+  position: absolute;
+  left: -20px;
+  top: 4px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  transform: translateX(-0.5px);
+}
+
+.dotCreated     { background-color: var(--ub-color-primary); }
+.dotNoteAdded   { background-color: var(--ub-color-on-surface-variant); }
+.dotStatusChanged { background-color: var(--ub-color-warning); }
+.dotAssigned    { background-color: var(--ub-color-primary); }
+.dotEscalated   { background-color: var(--ub-color-error); }
+.dotDismissed   { background-color: var(--ub-color-outline); }
+.dotSarLinked   { background-color: var(--ub-color-primary); }
+
+/* Cross-module types */
+.dotKycApproved       { background-color: var(--ub-color-tertiary-fixed); }
+.dotKycRejected       { background-color: var(--ub-color-error); }
+.dotKycManualReview   { background-color: var(--ub-color-warning); }
+.dotAmlAlertCreated   { background-color: var(--ub-color-error); }
+.dotRgExclusionApplied { background-color: var(--ub-color-error); }
+.dotRgExclusionExpired { background-color: var(--ub-color-outline); }
+.dotRgLimitSet        { background-color: var(--ub-color-primary); }
+.dotRgLimitReached    { background-color: var(--ub-color-warning); }
+.dotDepositCompleted  { background-color: var(--ub-color-tertiary-fixed); }
+.dotWithdrawalApproved { background-color: var(--ub-color-tertiary-fixed); }
+.dotWithdrawalRejected { background-color: var(--ub-color-error); }
+.dotLogin             { background-color: var(--ub-color-outline); }
+.dotPlayerCreated     { background-color: var(--ub-color-primary); }
+
+/* ── Module tag ── */
+
+.moduleTag {
+  display: inline-flex;
+  padding: 1px 5px;
+  border-radius: var(--ub-radius-full);
+  background-color: var(--ub-color-surface-container-high);
+  font-size: 10px;
+  font-weight: 500;
+  color: var(--ub-color-on-surface-variant);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  line-height: 1.2;
+}
+
+/* ── Item header ── */
+
+.itemHeader {
+  display: flex;
+  align-items: center;
+  gap: var(--ub-space-1);
+  flex-wrap: wrap;
+}
+
+.agentName {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--ub-color-on-surface);
+}
+
+.actionText {
+  font-size: 12px;
+  color: var(--ub-color-on-surface-variant);
+}
+
+.timestamp {
+  font-size: 11px;
+  color: var(--ub-color-on-surface-variant);
+  margin-left: auto;
+  white-space: nowrap;
+}
+
+/* ── Note block ── */
+
+.noteBlock {
+  margin-top: var(--ub-space-2);
+  padding: 6px 10px;
+  background-color: var(--ub-color-surface-container-low);
+  border-left: 2px solid var(--ub-color-primary);
+  border-radius: 0 var(--ub-radius-sm) var(--ub-radius-sm) 0;
+  font-size: 12px;
+  color: var(--ub-color-on-surface);
+  line-height: 1.5;
+  white-space: pre-wrap;
+}
+
+/* ── Status change badges ── */
+
+.statusChange {
+  display: flex;
+  align-items: center;
+  gap: var(--ub-space-1);
+  margin-top: var(--ub-space-1);
+  font-size: 11px;
+}
+
+.statusArrow {
+  color: var(--ub-color-on-surface-variant);
+  font-size: 10px;
+}
+
+/* ── Skeleton ── */
+
+.skeleton {
+  position: relative;
+  padding-bottom: var(--ub-space-4);
+}
+
+.skeletonBar {
+  height: 12px;
+  border-radius: var(--ub-radius-sm);
+  background: linear-gradient(
+    90deg,
+    var(--ub-color-surface-container-high) 25%,
+    var(--ub-color-surface-container-highest) 50%,
+    var(--ub-color-surface-container-high) 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+.skeletonDot {
+  position: absolute;
+  left: -20px;
+  top: 4px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--ub-color-surface-container-high);
+}

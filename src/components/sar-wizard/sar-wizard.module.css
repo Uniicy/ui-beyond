@@ -1,0 +1,492 @@
+/* ── Backdrop ── */
+
+.backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  z-index: 60;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 150ms ease;
+}
+
+.backdropOpen {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* ── Modal ── */
+
+.modal {
+  width: 880px;
+  max-height: 90vh;
+  background-color: var(--ub-color-surface);
+  border: 0.5px solid var(--ub-color-secondary-container);
+  border-radius: var(--ub-radius-lg);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  font-family: var(--ub-font-body);
+}
+
+/* ── Header ── */
+
+.header {
+  padding: 20px 24px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  flex-shrink: 0;
+}
+
+.headerTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.headerTitle {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--ub-color-on-surface);
+}
+
+/* ── Step indicator ── */
+
+.steps {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 0;
+  padding-bottom: 16px;
+  border-bottom: 0.5px solid var(--ub-ghost-border);
+}
+
+.step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  width: 140px;
+  position: relative;
+}
+
+.stepCircle {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1;
+  z-index: 1;
+}
+
+.stepFuture .stepCircle {
+  background-color: var(--ub-color-surface-container-high);
+  color: var(--ub-color-on-surface-variant);
+}
+
+.stepActive .stepCircle {
+  background-color: var(--ub-color-primary);
+  color: var(--ub-color-on-primary);
+}
+
+.stepCompleted .stepCircle {
+  background-color: var(--ub-color-tertiary-fixed);
+  color: #ffffff;
+}
+
+.stepLabel {
+  font-size: 11px;
+  color: var(--ub-color-on-surface-variant);
+  text-align: center;
+  line-height: 1.2;
+}
+
+.stepActive .stepLabel {
+  color: var(--ub-color-primary);
+  font-weight: 500;
+}
+
+.stepLine {
+  position: absolute;
+  top: 14px;
+  left: calc(50% + 18px);
+  width: calc(100% - 36px);
+  height: 1px;
+  background-color: var(--ub-color-surface-container-high);
+}
+
+.stepCompleted .stepLine {
+  background-color: var(--ub-color-tertiary-fixed);
+}
+
+/* ── Body ── */
+
+.body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 20px 24px;
+}
+
+/* ── Footer ── */
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 24px;
+  border-top: 0.5px solid var(--ub-ghost-border);
+  flex-shrink: 0;
+}
+
+.footerCenter {
+  font-size: 12px;
+  color: var(--ub-color-on-surface-variant);
+}
+
+/* ── Step 1: Link alerts ── */
+
+.linkLayout {
+  display: flex;
+  gap: 20px;
+  min-height: 360px;
+}
+
+.linkLeft {
+  flex: 3;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.linkRight {
+  flex: 2;
+  background-color: var(--ub-color-surface-container-low);
+  border-radius: var(--ub-radius-md);
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.linkSearch {
+  height: 32px;
+  padding: 0 10px;
+  border: 0.5px solid var(--ub-color-secondary-container);
+  border-radius: var(--ub-radius-md);
+  background-color: var(--ub-color-surface-container-low);
+  font-family: var(--ub-font-body);
+  font-size: 12px;
+  color: var(--ub-color-on-surface);
+  width: 100%;
+}
+
+.linkSearch:focus {
+  outline: none;
+  border-color: var(--ub-color-tertiary-fixed);
+}
+
+.alertListItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 6px;
+  border-bottom: 0.5px solid var(--ub-ghost-border);
+  font-size: 12px;
+}
+
+.alertListItem:last-child {
+  border-bottom: none;
+}
+
+.alertListName {
+  flex: 1;
+  font-weight: 500;
+  color: var(--ub-color-on-surface);
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.alertListPlayer {
+  color: var(--ub-color-on-surface-variant);
+  font-size: 11px;
+  width: 100px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.alertListDate {
+  font-size: 10px;
+  color: var(--ub-color-on-surface-variant);
+  font-family: var(--ub-font-mono);
+  white-space: nowrap;
+}
+
+.selectedTitle {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--ub-color-on-surface);
+}
+
+.selectedChips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.selectedEmpty {
+  font-size: 12px;
+  color: var(--ub-color-on-surface-variant);
+  text-align: center;
+  padding: 24px 0;
+}
+
+/* ── Step 2: Player details ── */
+
+.playerLayout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.fieldGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.fieldLabel {
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--ub-color-on-surface-variant);
+  line-height: 1;
+}
+
+.fieldValue {
+  font-size: 13px;
+  color: var(--ub-color-on-surface);
+}
+
+.fieldValueMono {
+  font-family: var(--ub-font-mono);
+  font-size: 12px;
+  color: var(--ub-color-on-surface);
+}
+
+.autoNote {
+  grid-column: 1 / -1;
+  font-size: 11px;
+  color: var(--ub-color-on-surface-variant);
+  padding: 8px 10px;
+  background-color: var(--ub-color-surface-container-low);
+  border-radius: var(--ub-radius-md);
+}
+
+/* ── Step 3: Narrative ── */
+
+.narrativeTextarea {
+  width: 100%;
+  min-height: 200px;
+  padding: 12px 14px;
+  border: 0.5px solid var(--ub-color-secondary-container);
+  border-radius: var(--ub-radius-md);
+  background-color: var(--ub-color-surface-container-low);
+  font-family: var(--ub-font-body);
+  font-size: 13px;
+  color: var(--ub-color-on-surface);
+  line-height: 1.6;
+  resize: vertical;
+}
+
+.narrativeTextarea::placeholder {
+  color: var(--ub-color-on-surface-variant);
+}
+
+.narrativeTextarea:focus {
+  outline: none;
+  border-color: var(--ub-color-tertiary-fixed);
+}
+
+.narrativeMeta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 8px;
+}
+
+.wordCount {
+  font-size: 11px;
+  color: var(--ub-color-on-surface-variant);
+  font-variant-numeric: tabular-nums;
+}
+
+.wordCountLow {
+  color: var(--ub-color-error);
+}
+
+.formatRow {
+  display: flex;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.formatOption {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  font-size: 13px;
+  color: var(--ub-color-on-surface);
+}
+
+.formatRadio {
+  accent-color: var(--ub-color-primary);
+}
+
+.hintToggle {
+  margin-top: 16px;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--ub-color-primary);
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.hintContent {
+  margin-top: 8px;
+  padding: 10px 14px;
+  background-color: var(--ub-color-surface-container-low);
+  border-radius: var(--ub-radius-md);
+  font-size: 12px;
+  color: var(--ub-color-on-surface-variant);
+  line-height: 1.6;
+}
+
+.hintContent ul {
+  margin: 4px 0 0 16px;
+  padding: 0;
+}
+
+/* ── Step 4: Review ── */
+
+.reviewLayout {
+  display: flex;
+  gap: 20px;
+  min-height: 360px;
+}
+
+.reviewLeft {
+  flex: 55;
+  overflow-y: auto;
+  max-height: 50vh;
+}
+
+.reviewRight {
+  flex: 45;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.codeBlock {
+  font-family: var(--ub-font-mono);
+  font-size: 11px;
+  line-height: 1.6;
+  color: var(--ub-color-on-surface);
+  background-color: var(--ub-color-surface-container-low);
+  border-radius: var(--ub-radius-md);
+  padding: 14px;
+  white-space: pre-wrap;
+  overflow-x: auto;
+  border: 0.5px solid var(--ub-color-secondary-container);
+}
+
+.reviewField {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  padding: 6px 0;
+  border-bottom: 0.5px solid var(--ub-ghost-border);
+}
+
+.reviewField:last-child {
+  border-bottom: none;
+}
+
+.reviewFieldLabel {
+  color: var(--ub-color-on-surface-variant);
+}
+
+.reviewFieldValue {
+  color: var(--ub-color-on-surface);
+  font-weight: 500;
+}
+
+.confirmRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+/* ── Success ── */
+
+.success {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 48px 0;
+  text-align: center;
+}
+
+.successIcon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: color-mix(in srgb, var(--ub-color-tertiary-fixed) 15%, transparent);
+  color: var(--ub-color-tertiary-fixed);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+}
+
+.successTitle {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--ub-color-on-surface);
+}
+
+.successDetail {
+  font-size: 13px;
+  color: var(--ub-color-on-surface-variant);
+}
+
+.successRef {
+  font-family: var(--ub-font-mono);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--ub-color-primary);
+}

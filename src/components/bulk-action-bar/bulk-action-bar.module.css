@@ -1,0 +1,118 @@
+.bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 44px;
+  padding: 0 14px;
+  background-color: var(--ub-color-surface-container-low);
+  border-bottom: 0.5px solid var(--ub-ghost-border);
+  font-family: var(--ub-font-body);
+  overflow: hidden;
+  transition: height 200ms ease, opacity 200ms ease;
+}
+
+.hidden {
+  height: 0;
+  opacity: 0;
+  padding: 0 14px;
+  border-bottom: none;
+  pointer-events: none;
+}
+
+.left {
+  display: flex;
+  align-items: center;
+  gap: var(--ub-space-2);
+}
+
+.selectedText {
+  font-size: 12px;
+  color: var(--ub-color-on-surface-variant);
+}
+
+.right {
+  display: flex;
+  align-items: center;
+  gap: var(--ub-space-2);
+}
+
+.divider {
+  width: 1px;
+  height: 20px;
+  background-color: var(--ub-ghost-border);
+}
+
+.ghostBtn {
+  display: flex;
+  align-items: center;
+  gap: var(--ub-space-1);
+  padding: 4px 10px;
+  border: none;
+  border-radius: var(--ub-radius-md);
+  background: none;
+  cursor: pointer;
+  font-family: var(--ub-font-body);
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--ub-color-on-surface-variant);
+  transition: background-color var(--ub-transition-fast), color var(--ub-transition-fast);
+}
+
+.ghostBtn:hover {
+  background-color: var(--ub-color-surface-container);
+  color: var(--ub-color-on-surface);
+}
+
+.clearBtn {
+  font-family: var(--ub-font-body);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--ub-color-primary);
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: opacity var(--ub-transition-fast);
+}
+
+.clearBtn:hover {
+  opacity: 0.75;
+}
+
+/* ── Assign dropdown ── */
+
+.assignWrapper {
+  position: relative;
+}
+
+.assignDropdown {
+  position: absolute;
+  top: calc(100% + 4px);
+  right: 0;
+  background-color: var(--ub-color-surface-container-low);
+  border-radius: var(--ub-radius-lg);
+  box-shadow: var(--ub-shadow-elevated);
+  z-index: 10;
+  padding: var(--ub-space-1) 0;
+  min-width: 160px;
+}
+
+.assignItem {
+  display: flex;
+  align-items: center;
+  gap: var(--ub-space-2);
+  width: 100%;
+  padding: 7px 12px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-family: var(--ub-font-body);
+  font-size: 12px;
+  color: var(--ub-color-on-surface);
+  text-align: left;
+  transition: background-color var(--ub-transition-fast);
+}
+
+.assignItem:hover {
+  background-color: var(--ub-color-surface-container);
+}

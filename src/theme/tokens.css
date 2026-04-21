@@ -127,6 +127,24 @@
   --ub-transition-fast: 120ms ease;
   --ub-transition-base: 200ms ease;
   --ub-transition-slow: 350ms ease;
+
+  /* ── Breakpoints (reference only; CSS @media must inline values) ── */
+  --ub-bp-sm: 640px;
+  --ub-bp-md: 768px;
+  --ub-bp-lg: 1024px;
+  --ub-bp-xl: 1280px;
+
+  /* ── Layout (PageShell contract) ── */
+  --ub-sidebar-w-expanded: 248px;
+  --ub-sidebar-w-collapsed: 56px;
+  --ub-header-h: 64px;
+  --ub-page-padding: clamp(16px, 3vw, 32px);
+  --ub-detail-panel-w: clamp(360px, 40vw, 520px);
+  --ub-z-sidebar: 20;
+  --ub-z-header: 10;
+  --ub-z-backdrop: 15;
+  --ub-z-drawer: 25;
+  --ub-z-panel: 30;
 }
 
 [data-theme='dark'] {
